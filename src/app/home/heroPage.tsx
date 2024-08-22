@@ -1,6 +1,6 @@
-/* eslint-disable react/no-unescaped-entities */
 import Link from "next/link";
 import { Avatar } from "@nextui-org/avatar";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -74,7 +74,7 @@ export default function Home() {
         href="/aryanbajpairesume.pdf"
         className="button fourth"
       >
-        <button
+        <Button
           className="button1"
           style={{
             display: "flex",
@@ -85,7 +85,7 @@ export default function Home() {
           }}
         >
           <i className="fa-solid fa-file-pdf"></i>
-        </button>
+        </Button>
         <span className="span1"></span>
       </Link>
       <svg

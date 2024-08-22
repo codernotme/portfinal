@@ -1,9 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
-
 import TechStack from "./TechStack";
 import WorkExperience from "./WorkExperience";
 
-/* eslint-disable react/no-unescaped-entities */
 export default function About() {
   return (
     <main
