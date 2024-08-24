@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Card,
   CardHeader,
@@ -15,10 +15,13 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Image } from "@nextui-org/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+
 export default function Portfolio() {
   const [modalOpenIndex, setModalOpenIndex] = useState<number | null>(null);
 
-  const [cards, setCards] = useState([
+  const cards = [
     {
       id: 1,
       title: "Allotalk.in",
@@ -27,6 +30,8 @@ export default function Portfolio() {
       content:
         "It's a PHP based real-time chat application. It is fully functional.",
       image: "/img/allotalk-poster.png",
+      tags: ["PHP", "Real-Time", "Chat Application"],
+      priority: true,
     },
     {
       id: 2,
@@ -36,65 +41,31 @@ export default function Portfolio() {
       content:
         "This is a simple Kirby-themed game built using Vite for bundling, Vanilla TypeScript for the game logic, and type-checking.",
       image: "/img/kirby.png",
+      tags: ["Vite", "TypeScript", "Game Dev"],
+      priority: true,
     },
     {
       id: 3,
-      title: "Todo-List",
-      description: "Todo list using html css",
-      link: "https://codernotme.github.io/todo-list-html/",
-      content:
-        "This project serves as a practice exercise for implementing basic concepts of HTML, CSS, and JS to create a Todo-List.",
-      image: "/img/todo.png",
-    },
-    {
-      id: 4,
-      title: "Amazone Clone",
-      description: "Simple amazon home page clone",
-      link: "https://amazon-clone-seven-blush.vercel.app/",
-      content: "It is a simple Amazon Home page clone using Html and css",
-      image: "/img/amazon.png",
-    },
-    {
-      id: 5,
-      title: "PortXme",
-      description: "Portfolio site",
-      link: "https://portxme.vercel.app/",
-      content: "This is an earlier version of my portfolio website",
-      image: "/img/portxme.png",
-    },
-    {
-      id: 6,
       title: "Portfolio",
       description: "Portfolio site",
       link: "https://github.com/codernotme/portfolio.me",
-      content: "For the project codes you can click on the link below",
+      content: "For the project codes you can click on the link below.",
       image: "/img/portfolio.png",
+      tags: ["Portfolio", "GitHub", "Code Repository"],
+      priority: false,
     },
     {
-      id: 7,
+      id: 4,
       title: "GitHub",
       description: "GitHub Profile",
       link: "https://github.com/codernotme",
       content:
-        "If you want to see the codes and my other projects. You can check out my GitHub profile",
+        "If you want to see the codes and my other projects. You can check out my GitHub profile.",
       image: "/img/github.png",
+      tags: ["GitHub", "Profile", "Open Source"],
+      priority: false,
     },
-  ]);
-
-  useEffect(() => {
-    const shuffleArray = (array: any[]) => {
-      const shuffledArray = [...array];
-      for (let i = shuffledArray.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffledArray[i], shuffledArray[j]] = [
-          shuffledArray[j],
-          shuffledArray[i],
-        ];
-      }
-      return shuffledArray;
-    };
-    setCards(shuffleArray(cards));
-  }, []);
+  ];
 
   const handleOpenModal = (index: number) => {
     setModalOpenIndex(index);
@@ -105,41 +76,73 @@ export default function Portfolio() {
   };
 
   return (
-    <main
-      className="flex flex-row items-center justify-center flex-wrap gap-4 p-4"
-      id="work"
-    >
-      {cards.map((card, index) => (
-        <Card
-          key={card.id}
-          className="w-full max-w-md bg-dark rounded-lg shadow-lg transition-transform duration-300"
-        >
-          <CardHeader className="flex justify-between items-center">
-            <CardTitle>{card.title}</CardTitle>
-            <Button variant="outline" onClick={() => handleOpenModal(index)}>
-              View
-            </Button>
-          </CardHeader>
-          <CardContent>
-            <CardDescription>{card.description}</CardDescription>
-            <Image
-              width={500}
-              height={"auto"}
-              src={card.image}
-              alt={card.title}
-            />
-          </CardContent>
-        </Card>
-      ))}
+    <main className="flex flex-col items-center justify-center w-full p-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {cards
+          .sort((a, b) => (b.priority ? 1 : 0) - (a.priority ? 1 : 0))
+          .map((card, index) => (
+            <Card
+              key={card.id}
+              className="bg-dark rounded-lg overflow-hidden relative"
+            >
+              <Image
+                width="100%"
+                height="auto"
+                src={card.image}
+                alt={card.title}
+                className="rounded-t-lg"
+                onClick={() => window.open(card.link, "_blank")}
+              />
+              <CardContent className="p-4">
+                <div className="flex justify-between items-center">
+                  <CardTitle className="text-lg font-semibold text-white">
+                    {card.title}
+                  </CardTitle>
+                  {card.priority && (
+                    <FontAwesomeIcon
+                      icon={faStar}
+                      className="text-red-500 absolute top-2 right-2"
+                      size="lg"
+                    />
+                  )}
+                </div>
+                <CardDescription className="text-gray-400 mb-4">
+                  {card.description}
+                </CardDescription>
+                <div className="flex flex-wrap gap-1 mb-2">
+                  {card.tags.map((tag, i) => (
+                    <span
+                      key={i}
+                      className="bg-gray-800 text-gray-400 px-2 py-1 text-xs rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex gap-2">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => handleOpenModal(index)}
+                  >
+                    Explore
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+      </div>
 
       {modalOpenIndex !== null && (
         <Dialog open={true} onOpenChange={handleCloseModal}>
-          <DialogContent className=" p-6 rounded-lg shadow-lg">
+          <DialogContent className="p-6 rounded-lg shadow-lg max-w-lg mx-auto">
             <DialogHeader>
               <DialogTitle>{cards[modalOpenIndex].title}</DialogTitle>
             </DialogHeader>
             <div className="p-6">
-              <p className="text-md mb-4">{cards[modalOpenIndex].content}</p>
+              <p className="text-md mb-4">
+                {cards[modalOpenIndex].description}
+              </p>
               <a
                 href={cards[modalOpenIndex].link}
                 target="_blank"

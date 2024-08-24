@@ -55,9 +55,13 @@ export default function Home() {
             </span>
             👋
           </h1>
+          <h1 className="greeting">
+            Web Developer || Python Enthusiast || AI Enthusiast || Innovating
+            future
+          </h1>
         </div>
       </div>
-      <Link href="#work" className="button first">
+      {/*<Link href="#work" className="button first">
         <button className="button1">Work</button>
         <span className="span1"></span>
       </Link>
@@ -68,7 +72,7 @@ export default function Home() {
       <Link href="#social" className="button third">
         <button className="button1">Connect</button>
         <span className="span1"></span>
-      </Link>
+      </Link>*/}
       <Link
         target="_blank"
         href="/aryanbajpairesume.pdf"

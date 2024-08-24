@@ -8,21 +8,23 @@ import Footer from "@/components/Footer";
 export default function Main() {
   return (
     <>
-      <ScrollAnimationWrapper>
-        <Home />
-      </ScrollAnimationWrapper>
-      <ScrollAnimationWrapper>
-        <About />
-      </ScrollAnimationWrapper>
-      <ScrollAnimationWrapper>
-        <Card />
-      </ScrollAnimationWrapper>
-      <ScrollAnimationWrapper>
-        <Socials />
-      </ScrollAnimationWrapper>
-      <ScrollAnimationWrapper>
-        <Footer />
-      </ScrollAnimationWrapper>
+      <main
+        className="flex min-h-screen   flex-col items-center justify-center bg-black"
+        style={{ width: "600px" }}
+      >
+        <ScrollAnimationWrapper>
+          <About />
+        </ScrollAnimationWrapper>
+        <ScrollAnimationWrapper>
+          <Card />
+        </ScrollAnimationWrapper>
+        <ScrollAnimationWrapper>
+          <Socials />
+        </ScrollAnimationWrapper>
+        <ScrollAnimationWrapper>
+          <Footer />
+        </ScrollAnimationWrapper>
+      </main>
     </>
   );
 }

@@ -18,15 +18,17 @@ const techStack = [
 
 const TechStack: React.FC = () => {
   return (
-    <div className="tech-stack-container fade-in">
-      <h1 className="tech-title">My Tech Stack</h1>
-      <ul className="tech-list">
-        {techStack.map((tech, index) => (
-          <li className="tech-item hover-effect" key={index}>
-            {tech}
-          </li>
-        ))}
-      </ul>
+    <div className="tech-stack-container">
+      <h1 className="tech-title">Tech Stack</h1>
+      <div className="tech-stack-container fade-in">
+        <ul className="tech-list">
+          {techStack.map((tech, index) => (
+            <li className="tech-item hover-effect" key={index}>
+              {tech}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

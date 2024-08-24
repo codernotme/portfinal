@@ -1,4 +1,11 @@
 import React from "react";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+import { Avatar, AvatarGroup, AvatarIcon } from "@nextui-org/avatar";
+import { ChevronDownIcon } from "@radix-ui/react-icons";
 
 const workExperience = [
   {
@@ -10,6 +17,7 @@ const workExperience = [
       "Engaged in strategic planning and hands-on execution.",
       "Convinced peers and college colleagues to purchase products and avail exciting deals.",
     ],
+    logo: "/img/internshala.png",
   },
   {
     company: "Ignitia Web Team",
@@ -20,8 +28,9 @@ const workExperience = [
       "Learned teamwork, industry practices, and meeting client expectations.",
       "Technologies used: NextJS, MongoDB.",
     ],
+    logo: "/img/ignitia.png",
   },
-  // Add more experiences as needed
+  // Add more work experience objects as needed
 ];
 
 const WorkExperience: React.FC = () => {
@@ -30,16 +39,28 @@ const WorkExperience: React.FC = () => {
       <h1 className="work-title">Work Experience</h1>
       <div className="experience-cards">
         {workExperience.map((experience, index) => (
-          <div className="experience-card hover-effect" key={index}>
-            <h2 className="company-name">{experience.company}</h2>
-            <h3 className="role">{experience.role}</h3>
-            <p className="duration">{experience.duration}</p>
-            <ul className="responsibilities">
-              {experience.responsibilities.map((task, taskIndex) => (
-                <li key={taskIndex}>{task}</li>
-              ))}
-            </ul>
-          </div>
+          <Collapsible key={index}>
+            <CollapsibleTrigger asChild>
+              <div className="experience-card hover-effect">
+                <div className="experience-header">
+                  <Avatar src={experience.logo} size="md" />
+                  <div className="experience-details">
+                    <h2 className="company-name">{experience.company}</h2>
+                    <h3 className="role">{experience.role}</h3>
+                    <p className="duration">{experience.duration}</p>
+                  </div>
+                  <ChevronDownIcon className="arrow-icon" />
+                </div>
+              </div>
+            </CollapsibleTrigger>
+            <CollapsibleContent>
+              <ul className="responsibilities">
+                {experience.responsibilities.map((task, taskIndex) => (
+                  <li key={taskIndex}>{task}</li>
+                ))}
+              </ul>
+            </CollapsibleContent>
+          </Collapsible>
         ))}
       </div>
     </div>
