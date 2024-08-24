@@ -1,47 +1,36 @@
 import React from "react";
-import { motion } from "framer-motion"; // For animations
+
 const workExperience = [
   {
-    company: "Company Name",
-    role: "Full Stack Developer",
-    duration: "June 2022 - Present",
+    company: "Internshala",
+    role: "Internshala Student Partner",
+    duration: "June 2023 - August 2023",
     responsibilities: [
-      "Developed and maintained web applications using React and Node.js.",
-      "Collaborated with cross-functional teams to define, design, and ship new features.",
-      "Optimized applications for maximum speed and scalability.",
-      "Integrated APIs and worked on database management.",
+      "Contributed to business marketing by promoting deals and products through various marketing activities.",
+      "Engaged in strategic planning and hands-on execution.",
+      "Convinced peers and college colleagues to purchase products and avail exciting deals.",
     ],
   },
   {
-    company: "Previous Company",
-    role: "Backend Developer",
-    duration: "January 2021 - May 2022",
+    company: "Ignitia Web Team",
+    role: "Frontend Lead",
+    duration: "April 2024",
     responsibilities: [
-      "Designed and implemented RESTful APIs for client applications.",
-      "Managed databases and optimized queries for better performance.",
-      "Worked closely with frontend developers to integrate APIs.",
-      "Participated in code reviews and provided mentorship to junior developers.",
+      "Created the Ignitia 2k24 website for the college fest.",
+      "Learned teamwork, industry practices, and meeting client expectations.",
+      "Technologies used: NextJS, MongoDB.",
     ],
   },
   // Add more experiences as needed
 ];
+
 const WorkExperience: React.FC = () => {
   return (
-    <motion.div
-      className="work-experience-container"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-    >
-      <motion.h1 className="tech-title">Work Experience</motion.h1>
-      <motion.div className="experience-cards">
+    <div className="work-experience-container fade-in">
+      <h1 className="work-title">Work Experience</h1>
+      <div className="experience-cards">
         {workExperience.map((experience, index) => (
-          <motion.div
-            className="experience-card"
-            key={index}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
+          <div className="experience-card hover-effect" key={index}>
             <h2 className="company-name">{experience.company}</h2>
             <h3 className="role">{experience.role}</h3>
             <p className="duration">{experience.duration}</p>
@@ -50,10 +39,10 @@ const WorkExperience: React.FC = () => {
                 <li key={taskIndex}>{task}</li>
               ))}
             </ul>
-          </motion.div>
+          </div>
         ))}
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 };
 
