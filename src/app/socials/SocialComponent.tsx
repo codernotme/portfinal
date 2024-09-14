@@ -6,23 +6,23 @@ import {
   faTwitter,
   faLinkedin,
   faDiscord,
-  faGithub,
+  faGithub
 } from "@fortawesome/free-brands-svg-icons";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
-  TooltipTrigger,
+  TooltipTrigger
 } from "@/components/ui/tooltip";
 
 export default function SocialFooter() {
   return (
     <div
-      className="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-black/80 text-white py-3 px-8 rounded-full shadow-lg flex space-x-4"
+      className="fixed bottom-4 left-1/2 transform -translate-x-1/2  py-3 px-4 md:px-6 lg:px-8 rounded-full shadow-lg flex space-x-4 md:space-x-6 lg:space-x-8 justify-center items-center"
       style={{
         backdropFilter: "blur(10px)",
-        border: "0.01px solid white",
-        zIndex: 9999,
+        border: "0.01px solid",
+        zIndex: 9999
       }}
     >
       <TooltipProvider>
@@ -32,7 +32,7 @@ export default function SocialFooter() {
               href="https://www.instagram.com/outta_urreach/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 hover:bg-white/10 rounded-full transition-all duration-300 hover:scale-110"
+              className="p-2 md:p-3 lg:p-4 hover:bg-secondary-foreground/10 rounded-full transition-all duration-300 hover:scale-110"
             >
               <FontAwesomeIcon icon={faInstagram} size="lg" />
             </a>
@@ -48,7 +48,7 @@ export default function SocialFooter() {
               href="https://www.behance.net/codernotme"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 hover:bg-white/10 rounded-full transition-all duration-300 hover:scale-110"
+              className="p-2 md:p-3 lg:p-4 hover:bg-secondary-foreground/10 rounded-full transition-all duration-300 hover:scale-110"
             >
               <FontAwesomeIcon icon={faBehance} size="lg" />
             </a>
@@ -64,7 +64,7 @@ export default function SocialFooter() {
               href="https://twitter.com/codernotme"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 hover:bg-white/10 rounded-full transition-all duration-300 hover:scale-110"
+              className="p-2 md:p-3 lg:p-4 hover:bg-secondary-foreground/10 rounded-full transition-all duration-300 hover:scale-110"
             >
               <FontAwesomeIcon icon={faTwitter} size="lg" />
             </a>
@@ -80,7 +80,7 @@ export default function SocialFooter() {
               href="https://www.linkedin.com/in/codernotme/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 hover:bg-white/10 rounded-full transition-all duration-300 hover:scale-110"
+              className="p-2 md:p-3 lg:p-4 hover:bg-secondary-foreground/10 rounded-full transition-all duration-300 hover:scale-110"
             >
               <FontAwesomeIcon icon={faLinkedin} size="lg" />
             </a>
@@ -93,10 +93,10 @@ export default function SocialFooter() {
         <Tooltip>
           <TooltipTrigger>
             <a
-              href="https://discord.com/invite/your-invite-code"
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 hover:bg-white/10 rounded-full transition-all duration-300 hover:scale-110"
+              className="p-2 md:p-3 lg:p-4 hover:bg-secondary-foreground/10 rounded-full transition-all duration-300 hover:scale-110"
             >
               <FontAwesomeIcon icon={faDiscord} size="lg" />
             </a>
@@ -112,7 +112,7 @@ export default function SocialFooter() {
               href="https://github.com/codernotme"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 hover:bg-white/10 rounded-full transition-all duration-300 hover:scale-110"
+              className="p-2 md:p-3 lg:p-4 hover:bg-secondary-foreground/10 rounded-full transition-all duration-300 hover:scale-110"
             >
               <FontAwesomeIcon icon={faGithub} size="lg" />
             </a>

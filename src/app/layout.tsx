@@ -7,7 +7,7 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 
 // RootLayout component to wrap the app
 export default function RootLayout({
-  children,
+  children
 }: {
   children: React.ReactNode;
 }) {
@@ -19,7 +19,7 @@ export default function RootLayout({
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         />
       </head>
-      <body className={poppins.className}>
+      <body className={poppins.className + "max-w-screen-sm"}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

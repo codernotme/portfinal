@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const FooterContainer = styled.footer`
-  background-color: rgb(0, 0, 0);
   backdrop-filter: blur(10px);
   align-items: center;
   justify-content: center;
@@ -16,10 +15,9 @@ const Footer: React.FC = () => {
       <div className="flex flex-col justify-center items-center p-24">
         <h1
           style={{
-            color: "white",
             fontWeight: "-moz-initial",
             fontSize: "2rem",
-            textAlign: "center",
+            textAlign: "center"
           }}
         >
           Hit me up, as per your preference

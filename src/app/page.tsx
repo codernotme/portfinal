@@ -1,32 +1,30 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import Home1 from "./home/page";
+import React from "react";
 import ScrollAnimationWrapper from "@/components/ScrollAnimationWrapper";
-import Preloader from "@/components/Preloader";
 import Home from "./home/heroPage";
+import About from "./about/page";
+import Card from "./card/page";
+import Footer from "@/components/Footer";
+import SocialFooter from "./socials/SocialComponent";
 
 export default function Main() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 8000); // Adjust the time as needed
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <>
-      {loading ? (
-        <Preloader />
-      ) : (
-        <main className="flex min-h-screen flex-col items-center justify-center bg-black">
-          <ScrollAnimationWrapper>
-            <Home />
-          </ScrollAnimationWrapper>
-          <ScrollAnimationWrapper>
-            <Home1 />
-          </ScrollAnimationWrapper>
-        </main>
-      )}
+      <main className="flex min-h-screen flex-col items-center justify-center">
+        <ScrollAnimationWrapper>
+          <Home />
+        </ScrollAnimationWrapper>
+        <ScrollAnimationWrapper>
+          <About />
+        </ScrollAnimationWrapper>
+        <ScrollAnimationWrapper>
+          <Card />
+        </ScrollAnimationWrapper>
+        <ScrollAnimationWrapper>
+          <Footer />
+        </ScrollAnimationWrapper>
+        <SocialFooter />
+      </main>
     </>
   );
 }

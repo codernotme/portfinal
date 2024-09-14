@@ -3,20 +3,11 @@ import WorkExperience from "./WorkExperience";
 
 export default function About() {
   return (
-    <main
-      className="flex min-h-screen flex-col items-center justify-center"
-      id="about"
-    >
-      {/*<div className="profile-container">
-        <img
-          src="./images/myimage.png"
-          alt="Aryan Bajpai"
-          className="profile-picture"
-        />
-      </div>*/}
-      <div className="profile-container">
-        <div className="about-text">
-          <p className="description">
+    <main className="flex flex-col items-center justify-center" id="about">
+      <div className="flex flex-col items-center justify-center text-center">
+        {/* About Text */}
+        <div className="max-w-xl text-center px-5">
+          <p className="text-lg leading-relaxed">
             A dedicated Full Stack Developer with a passion for creating
             seamless and intuitive user experiences. Currently pursuing a B.Tech
             in Computer Science with a specialization in Artificial

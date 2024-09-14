@@ -1,34 +1,47 @@
 import React from "react";
 
 const techStack = [
+  "HTML",
+  "CSS",
   "JavaScript",
-  "React.js",
+  "TypeScript",
+  "React",
   "Next.js",
-  "MongoDB",
+  "Tailwind CSS",
   "Node.js",
-  "MySQL",
-  "Python",
-  "C++",
-  "Java",
-  "HTML5",
-  "CSS3",
+  "Express",
+  "MySql",
+  "MongoDB",
+  "Convex",
   "Git/GitHub",
-  // Add more as needed
+  "Figma",
+  "Vercel",
+  "Aws",
+  "Google Cloud",
+  "Google Apis",
+  "Meta Apis",
+  "Prompt Engineering",
+  "Clerk",
+  "Clerk Next.js",
+  "Clerk UI",
+  "Clerk Auth"
 ];
 
 const TechStack: React.FC = () => {
   return (
-    <div className="tech-stack-container">
-      <h1 className="tech-title">Tech Stack</h1>
-      <div className="tech-stack-container fade-in">
-        <ul className="tech-list">
-          {techStack.map((tech, index) => (
-            <li className="tech-item hover-effect" key={index}>
-              {tech}
-            </li>
-          ))}
-        </ul>
-      </div>
+    <div className="flex flex-col items-center justify-center my-10">
+      <h1 className="text-3xl mb-8">Tech Stack</h1>
+      <ul className="flex flex-wrap justify-center gap-4">
+        {techStack.map((tech, index) => (
+          <li
+            key={index}
+            className="px-4 py-2  rounded-md shadow-md transform transition-transform hover:scale-105"
+            style={{ border: "1px solid" }}
+          >
+            {tech}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
