@@ -30,7 +30,7 @@ const techStack = [
 const TechStack: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center my-10">
-      <h1 className="text-3xl mb-8">Tech Stack</h1>
+      <h1 className="text-4xl font-bold mb-8 text-center">Tech Stack</h1>
       <ul className="flex flex-wrap justify-center gap-4">
         {techStack.map((tech, index) => (
           <li
