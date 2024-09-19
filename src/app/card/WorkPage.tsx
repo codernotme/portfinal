@@ -26,7 +26,7 @@ export default function Portfolio() {
       title: "Devhive",
       description:
         "An online hybrid platform for developers to connect and collaborate freely and grow together.",
-      link: "https://devhive-prod.vercel.app/home",
+      link: "https://devhive-alpha.vercel.app/",
       content:
         "It's a platform that enables users to chat with others, share ideas, work on ongoing projects, collaborate, and much more. To check out the alpha version click on the link below.",
       image: "/img/devhive.png",
