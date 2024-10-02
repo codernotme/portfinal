@@ -14,6 +14,9 @@ import {
   TooltipProvider,
   TooltipTrigger
 } from "@/components/ui/tooltip";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { faCoffee, faSackDollar } from "@fortawesome/free-solid-svg-icons";
 
 export default function SocialFooter() {
   return (
@@ -28,14 +31,14 @@ export default function SocialFooter() {
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger>
-            <a
+            <Link
               href="https://www.instagram.com/outta_urreach/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 md:p-3 lg:p-4 hover:bg-secondary-foreground/10 rounded-full transition-all duration-300 hover:scale-110"
             >
               <FontAwesomeIcon icon={faInstagram} size="lg" />
-            </a>
+            </Link>
           </TooltipTrigger>
           <TooltipContent>
             <p>Instagram</p>
@@ -44,14 +47,14 @@ export default function SocialFooter() {
 
         <Tooltip>
           <TooltipTrigger>
-            <a
+            <Link
               href="https://www.behance.net/codernotme"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 md:p-3 lg:p-4 hover:bg-secondary-foreground/10 rounded-full transition-all duration-300 hover:scale-110"
             >
               <FontAwesomeIcon icon={faBehance} size="lg" />
-            </a>
+            </Link>
           </TooltipTrigger>
           <TooltipContent>
             <p>Behance</p>
@@ -60,14 +63,14 @@ export default function SocialFooter() {
 
         <Tooltip>
           <TooltipTrigger>
-            <a
+            <Link
               href="https://twitter.com/codernotme"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 md:p-3 lg:p-4 hover:bg-secondary-foreground/10 rounded-full transition-all duration-300 hover:scale-110"
             >
               <FontAwesomeIcon icon={faTwitter} size="lg" />
-            </a>
+            </Link>
           </TooltipTrigger>
           <TooltipContent>
             <p>Twitter</p>
@@ -76,49 +79,64 @@ export default function SocialFooter() {
 
         <Tooltip>
           <TooltipTrigger>
-            <a
+            <Link
               href="https://www.linkedin.com/in/codernotme/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 md:p-3 lg:p-4 hover:bg-secondary-foreground/10 rounded-full transition-all duration-300 hover:scale-110"
             >
               <FontAwesomeIcon icon={faLinkedin} size="lg" />
-            </a>
+            </Link>
           </TooltipTrigger>
           <TooltipContent>
             <p>LinkedIn</p>
           </TooltipContent>
         </Tooltip>
 
-        <Tooltip>
+        {/*<Tooltip>
           <TooltipTrigger>
-            <a
+            <Link
               href="#"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 md:p-3 lg:p-4 hover:bg-secondary-foreground/10 rounded-full transition-all duration-300 hover:scale-110"
             >
               <FontAwesomeIcon icon={faDiscord} size="lg" />
-            </a>
+            </Link>
           </TooltipTrigger>
           <TooltipContent>
             <p>Discord</p>
           </TooltipContent>
-        </Tooltip>
+        </Tooltip>*/}
 
         <Tooltip>
           <TooltipTrigger>
-            <a
+            <Link
               href="https://github.com/codernotme"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 md:p-3 lg:p-4 hover:bg-secondary-foreground/10 rounded-full transition-all duration-300 hover:scale-110"
             >
               <FontAwesomeIcon icon={faGithub} size="lg" />
-            </a>
+            </Link>
           </TooltipTrigger>
           <TooltipContent>
             <p>GitHub</p>
+          </TooltipContent>
+        </Tooltip>
+        <Tooltip>
+          <TooltipTrigger>
+            <Link
+              href="https://www.buymeacoffee.com/codernotme"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 md:p-3 lg:p-4 hover:bg-secondary-foreground/10 rounded-full transition-all duration-300 hover:scale-110"
+            >
+              <FontAwesomeIcon icon={faSackDollar} size="lg" />
+            </Link>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>Tip</p>
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>

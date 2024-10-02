@@ -23,13 +23,13 @@ export default function Portfolio() {
   const cards = [
     {
       id: 1,
-      title: "Devhive",
+      title: "ECHO",
       description:
-        "An online hybrid platform for developers to connect and collaborate freely and grow together.",
-      link: "https://devhive-alpha.vercel.app/",
+        "An online social media platform designed to bring people together in a space where they can post, chat, and connect with others",
+      link: "https://socialmed-echo.vercel.app",
       content:
-        "It's a platform that enables users to chat with others, share ideas, work on ongoing projects, collaborate, and much more. To check out the alpha version click on the link below.",
-      image: "/img/devhive.png",
+        "It's a platform that enables users to chat with others, share ideas, and much more. To check out the alpha version click on the link below.",
+      image: "/img/ECHO-logo.png",
       tags: ["Ongoing", "Chat App", "Next.js", "Convex", "Clerk"],
       priority: true
     },
@@ -40,7 +40,7 @@ export default function Portfolio() {
       link: "https://github.com/codernotme/chess-app",
       content: "For the project codes you can click on the link below.",
       image: "/img/chessapp.png",
-      tags: ["Ongoing", "Chess", "Python", "Pygame"],
+      tags: ["Chess", "Python", "Pygame"],
       priority: true
     },
     {
