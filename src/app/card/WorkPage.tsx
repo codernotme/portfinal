@@ -29,8 +29,8 @@ export default function Portfolio() {
       link: "https://socialmed-echo.vercel.app",
       content:
         "It's a platform that enables users to chat with others, share ideas, and much more. To check out the alpha version click on the link below.",
-      image: "/img/ECHO-logo.png",
-      tags: ["Ongoing", "Chat App", "Next.js", "Convex", "Clerk"],
+      image: "/img/echo.png",
+      tags: ["Chat App", "Next.js", "Convex", "Clerk"],
       priority: true
     },
     {
@@ -127,7 +127,7 @@ export default function Portfolio() {
   return (
     <main className="flex flex-col items-center justify-center w-full p-4">
       {/* Responsive grid layout */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
         {cards
           .sort((a, b) => (b.priority ? 1 : 0) - (a.priority ? 1 : 0))
           .map((card, index) => (
