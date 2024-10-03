@@ -36,7 +36,7 @@ const WorkExperience: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center">
       <h1 className="text-4xl font-bold mb-8 text-center">Work Experience</h1>
-      <div className="space-y-8 ">
+      <div className="space-y-8">
         {workExperience.map((experience, index) => (
           <Collapsible key={index}>
             <CollapsibleTrigger asChild>
@@ -46,7 +46,7 @@ const WorkExperience: React.FC = () => {
                   <div>
                     <h2 className="text-xl font-bold">{experience.company}</h2>
                     <h3 className="text-lg text-gray-400">{experience.role}</h3>
-                    <p className="text-sm text-gray-500">
+                    <p className="text-sm text-gray-500 ">
                       {experience.duration}
                     </p>
                   </div>
@@ -54,7 +54,7 @@ const WorkExperience: React.FC = () => {
                 <ChevronDownIcon className="text-gray-400 transition-transform transform rotate-0 [aria-expanded='true']:rotate-180" />
               </div>
             </CollapsibleTrigger>
-            <CollapsibleContent>
+            <CollapsibleContent className="bg-secondary rounded-lg p-2">
               <ul className="pl-8 mt-2 list-disc">
                 {experience.responsibilities.map((task, taskIndex) => (
                   <li key={taskIndex}>{task}</li>

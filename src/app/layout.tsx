@@ -19,7 +19,7 @@ export default function RootLayout({
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         />
       </head>
-      <body className={poppins.className + "max-w-screen-sm"}>
+      <body className={poppins.className + "max-w-screen-sm container"}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
