@@ -125,7 +125,7 @@ export default function Portfolio() {
   };
 
   return (
-    <main className="flex flex-col items-center justify-center w-full p-4">
+    <main className="flex flex-col items-center justify-center w-full p-4 ">
       {/* Responsive grid layout */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
         {cards
@@ -133,9 +133,9 @@ export default function Portfolio() {
           .map((card, index) => (
             <Card
               key={card.id}
-              className={`bg-dark rounded-lg overflow-hidden relative max-w-xs mx-auto flex flex-col ${
+              className={`bg-dark rounded-lg overflow-hidden relative max-w-xs mx-auto flex flex-col transition-transform duration-300 ${
                 card.priority ? "border-2 border-blue-500" : ""
-              }`}
+              } hover:shadow-lg hover:scale-105`}
             >
               <Image
                 width="100%"
@@ -188,12 +188,19 @@ export default function Portfolio() {
 
       {modalOpenIndex !== null && (
         <Dialog open={true} onOpenChange={handleCloseModal}>
-          <DialogContent className="p-6 rounded-lg shadow-lg max-w-lg mx-auto">
-            <DialogHeader>
-              <DialogTitle>{cards[modalOpenIndex].title}</DialogTitle>
+          <DialogContent className="p-6 rounded-lg shadow-lg max-w-lg mx-auto bg-background">
+            <DialogHeader className="flex justify-between items-center">
+              <DialogTitle className="text-white">
+                {cards[modalOpenIndex].title}
+              </DialogTitle>
+              <Button variant="ghost" onClick={handleCloseModal}>
+                Close
+              </Button>
             </DialogHeader>
             <div className="p-6">
-              <p className="text-md mb-4">{cards[modalOpenIndex].content}</p>
+              <p className="text-md mb-4 text-gray-300">
+                {cards[modalOpenIndex].content}
+              </p>
               <a
                 href={cards[modalOpenIndex].link}
                 target="_blank"

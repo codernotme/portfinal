@@ -10,7 +10,7 @@ import SocialFooter from "./socials/SocialComponent";
 export default function Main() {
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center justify-center">
+      <main className="flex relative flex-col items-center justify-center">
         <ScrollAnimationWrapper>
           <Home />
         </ScrollAnimationWrapper>
