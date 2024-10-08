@@ -1,3 +1,4 @@
+import React from "react"; // Make sure to import React
 import TechStack from "./TechStack";
 import WorkExperience from "./WorkExperience";
 import { motion } from "framer-motion";

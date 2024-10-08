@@ -37,8 +37,8 @@ const WorkExperience: React.FC = () => {
     <div className="flex flex-col items-center justify-center">
       <h1 className="text-4xl font-bold mb-8 text-center">Work Experience</h1>
       <div className="space-y-6">
-        {workExperience.map((experience, index) => (
-          <Collapsible key={index}>
+        {workExperience.map((experience) => (
+          <Collapsible key={experience.company}>
             <CollapsibleTrigger asChild>
               <div className="flex justify-between items-center p-4 rounded-lg cursor-pointer transition-transform duration-200 hover:bg-gray-800">
                 <div className="flex items-center space-x-4">

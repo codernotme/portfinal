@@ -1,3 +1,4 @@
+import React from "react"; // Import React
 import { motion } from "framer-motion";
 
 const techStack = [
