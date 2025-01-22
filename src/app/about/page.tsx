@@ -1,30 +1,24 @@
-import React from "react"; // Make sure to import React
-import TechStack from "./TechStack";
-import WorkExperience from "./WorkExperience";
+import TechStack from "./TechStack"
+import WorkExperience from "./WorkExperience"
 
 export default function About() {
   return (
-    <main
-      className="flex flex-col items-center justify-center py-12 bg-gradient-to-b from-background/50 to-background/80"
-      id="about"
-    >
-      <div className="flex flex-col items-center justify-center text-center mb-12">
-        {/* About Text */}
-        <div className="max-w-xl text-center px-5">
-          <p className="text-lg leading-relaxed text-foreground">
-            A dedicated Full Stack Developer with a passion for creating
-            seamless and intuitive user experiences. Currently pursuing a B.Tech
-            in Computer Science with a specialization in Artificial
-            Intelligence, I am deeply invested in the intersection of technology
-            and creativity. My journey in web development is driven by a love
-            for solving complex problems and bringing innovative ideas to life.
+    <section className="py-12 bg-gradient-to-b from-background/50 via-background/30 to-background/10" id="about">
+      <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <h2 className="text-4xl font-bold mb-6">About Me</h2>
+          <p className="text-lg leading-relaxed text-foreground/80">
+            A dedicated Full Stack Developer with a passion for creating seamless and intuitive user experiences.
+            Currently pursuing a B.Tech in Computer Science with a specialization in Artificial Intelligence, I am
+            deeply invested in the intersection of technology and creativity. My journey in web development is driven by
+            a love for solving complex problems and bringing innovative ideas to life.
           </p>
         </div>
-      </div>
 
-      {/* TechStack and WorkExperience sections */}
-      <TechStack />
-      <WorkExperience />
-    </main>
-  );
+        <TechStack />
+        <WorkExperience />
+      </div>
+    </section>
+  )
 }
+

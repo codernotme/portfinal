@@ -1,6 +1,8 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import ScrollerAnimation from "@/components/ScrollAnimationWrapper";
+import {HeroUIProvider} from "@heroui/react";
 
 // Import the font with specific weights
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
@@ -26,7 +28,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <HeroUIProvider>
+          <ScrollerAnimation/>
           {children}
+          </HeroUIProvider>
         </ThemeProvider>
       </body>
     </html>

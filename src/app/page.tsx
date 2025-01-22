@@ -10,19 +10,15 @@ import About from "./about/page";
 export default function Main() {
   return (
     <>
-      <main className="flex relative flex-col items-center justify-center">
-        <ScrollAnimationWrapper>
+      <main className="flex relative flex-col items-center justify-center min-h-screen bg-background text-foreground scroller-visible">
           <Home />
-        </ScrollAnimationWrapper>
-        <ScrollAnimationWrapper>
+        
           <About />
-        </ScrollAnimationWrapper>
-        <ScrollAnimationWrapper>
+        
           <Card />
-        </ScrollAnimationWrapper>
-        <ScrollAnimationWrapper>
+        
           <Footer />
-        </ScrollAnimationWrapper>
+        
         <SocialFooter />
       </main>
     </>
