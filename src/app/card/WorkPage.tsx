@@ -108,7 +108,7 @@ const projects: Project[] = [
     image: "/img/algomitra.png",
     tags: ["Algorithms","Next.js", "GitHub", "JavaScript", "HTML", "CSS", "Open Source"],
     priority: false,
-    status: "completed",
+    status: "in-progress",
   },
   {
     id: 7,
