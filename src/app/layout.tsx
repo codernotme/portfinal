@@ -20,6 +20,10 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         />
+        <title>Portfolio</title>
+        <meta name="description" content="Portfolio of Aryan Bajpai" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={poppins.className}>
         <ThemeProvider

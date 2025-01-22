@@ -16,7 +16,8 @@ interface Project {
   id: number;
   title: string;
   description: string;
-  link: string;
+  websiteLink?: string;
+  githubLink?: string;
   content: string;
   image: string;
   tags: string[];
@@ -34,22 +35,37 @@ const statusConfig: Record<ProjectStatus, { icon: LucideIcon; text: string; clas
 const projects: Project[] = [
   {
     id: 1,
-    title: "ECHO",
+    title: "VYBE",
     description:
-      "An online social media platform designed to bring people together in a space where they can post, chat, and connect with others.",
-    link: "https://socialmed-echo.vercel.app",
+      "A unique social platform that empowers students, mentors, and communities within colleges to connect meaningfully.",
+    websiteLink: "https://vybe-nu.vercel.app/",
+    githubLink: "https://github.com/codernotme/vybe",
     content:
-      "It's a platform that enables users to chat with others, share ideas, and much more. To check out the alpha version, click the link below.",
-    image: "/img/echo.png",
+      "Designed to foster collaboration, build communities, and facilitate mentorship, VYBE redefines campus social interactions. Click the link below.",
+    image: "/img/vybe.png",
     tags: ["Chat App", "Next.js", "Convex", "Clerk"],
     priority: true,
     status: "beta",
   },
   {
     id: 2,
+    title: "ECHO",
+    description:
+      "An online social media platform designed to bring people together in a space where they can post, chat, and connect with others.",
+    websiteLink: "https://socialmed-echo.vercel.app/",
+    githubLink: "https://github.com/codernotme/echo",
+    content:
+      "It's a platform that enables users to chat with others, share ideas, and much more. To check out the alpha version, click the link below.",
+    image: "/img/echo.png",
+    tags: ["Chat App", "Next.js", "Convex", "Clerk"],
+    priority: true,
+    status: "completed",
+  },
+  {
+    id: 3,
     title: "Chess App",
     description: "Chess game using Python and Pygame.",
-    link: "https://github.com/codernotme/chess-app",
+    githubLink: "https://github.com/codernotme/chess-app",
     content: "For the project codes, you can click the link below.",
     image: "/img/chessapp.png",
     tags: ["Chess", "Python", "Pygame"],
@@ -57,45 +73,49 @@ const projects: Project[] = [
     status: "completed",
   },
   {
-    id: 3,
+    id: 4,
     title: "Kirby Game",
     description: "Using Vite and TypeScript.",
-    link: "https://kirby-game-ts.vercel.app/",
+    websiteLink: "https://kirby-game-ts.vercel.app/",
+    githubLink: "https://github.com/codernotme/kirby-game-ts",
     content:
       "This is a simple Kirby-themed game built using Vite for bundling, Vanilla TypeScript for the game logic, and type-checking.",
     image: "/img/kirby.png",
     tags: ["Vite", "TypeScript", "Game Dev", "Vanilla JS", "Interactive", "Animation"],
     priority: false,
-    status: "in-progress",
-  },
-  {
-    id: 4,
-    title: "Password Manager",
-    description: "Password manager using JavaScript.",
-    link: "https://codernotme.github.io/password-manager/",
-    content:
-      "This is a simple password manager built using JavaScript. You can create a new password, update an existing password, or delete passwords.",
-    image: "/img/password.png",
-    tags: ["Password Manager", "GitHub", "JavaScript", "HTML", "CSS", "Open Source"],
-    priority: false,
     status: "completed",
   },
   {
     id: 5,
-    title: "Weather App",
-    description: "Weather App.",
-    link: "https://codernotme.github.io/weather-app/",
-    content: "This is a simple weather app built using JavaScript. You can check the weather of any city.",
-    image: "/img/weather.png",
-    tags: ["Weather App", "GitHub", "JavaScript", "HTML", "CSS", "Open Source"],
+    title: "Allocam",
+    description: "Omegle Substitute made using vite and react.",
+    websiteLink: "https://allocam.vercel.app/",
+    githubLink: "https://github.com/codernotme/allocam",
+    content:
+      "Allocam is a real-time camera and streaming application designed for secure and responsive live video interactions. Built with Vite, Node.js, and Socket.IO, Allocam ensures minimal delay and a user-friendly interface.",
+    image: "/img/allocam.png",
+    tags: ["Omegle", "GitHub", "JavaScript", "HTML", "CSS", "Open Source"],
+    priority: true,
+    status: "in-progress",
+  },
+  {
+    id: 6,
+    title: "AlgoMitra",
+    description: "AlgoMitra is a visually engaging, interactive educational tool aimed at making algorithm learning enjoyable and accessible.",
+    websiteLink: "https://algomitra.vercel.app/",
+    githubLink: "https://github.com/codernotme/AlgoMitra",
+    content: "AlgoMitra is a visually engaging, interactive educational tool aimed at making algorithm learning enjoyable and accessible. Built with Next.js and TypeScript, and powered by NextUI, AlgoMitra offers seamless visualizations that allow users to intuitively explore a wide variety of algorithms, from basic sorting and searching to advanced dynamic programming and graph traversal techniques.",
+    image: "/img/algomitra.png",
+    tags: ["Algorithms","Next.js", "GitHub", "JavaScript", "HTML", "CSS", "Open Source"],
     priority: false,
     status: "completed",
   },
   {
-    id: 6,
+    id: 7,
     title: "GitHub Profile",
     description: "GitHub Profile.",
-    link: "https://github.com/codernotme",
+    websiteLink: "https://vybe-nu.vercel.app/",
+    githubLink: "https://github.com/codernotme/vybe",
     content: "If you want to see the codes and my other projects, you can check out my GitHub profile.",
     image: "/img/github.png",
     tags: ["GitHub", "Profile", "Open Source", "Developer", "Repositories", "Code Sharing"],
@@ -134,8 +154,8 @@ export default function Projects() {
                     <Image
                       src={project.image || "/placeholder.svg"}
                       alt={project.title}
-                      layout="fill"
-                      objectFit="cover"
+                      fill
+                      style={{ objectFit: "cover" }}
                       className="rounded-t-lg"
                     />
                     <div className="absolute top-2 left-2 flex flex-wrap gap-2">
@@ -193,8 +213,8 @@ export default function Projects() {
                   <Image
                     src={projects[modalOpenIndex].image || "/placeholder.svg"}
                     alt={projects[modalOpenIndex].title}
-                    layout="fill"
-                    objectFit="cover"
+                    fill
+                    style={{ objectFit: "cover" }}
                     className="rounded-lg"
                   />
                 </div>
@@ -212,27 +232,26 @@ export default function Projects() {
                   Close
                 </Button>
                 <div className="flex flex-col sm:flex-row gap-2">
-                  <Button
-                    variant="bordered"
-                    onPress={() => window.open(projects[modalOpenIndex].link, "_blank")}
-                    className="w-full sm:w-auto"
-                  >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Visit Project
-                  </Button>
-                  <Button
-                    variant="bordered"
-                    onPress={() =>
-                      window.open(
-                        `https://github.com/codernotme/${projects[modalOpenIndex].title.toLowerCase().replace(/\s+/g, "-")}`,
-                        "_blank",
-                      )
-                    }
-                    className="w-full sm:w-auto"
-                  >
-                    <Github className="w-4 h-4 mr-2" />
-                    View Code
-                  </Button>
+                  {projects[modalOpenIndex].websiteLink && (
+                    <Button
+                      variant="bordered"
+                      onPress={() => window.open(projects[modalOpenIndex].websiteLink, "_blank")}
+                      className="w-full sm:w-auto"
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Visit Project
+                    </Button>
+                  )}
+                  {projects[modalOpenIndex].githubLink && (
+                    <Button
+                      variant="bordered"
+                      onPress={() => window.open(projects[modalOpenIndex].githubLink, "_blank")}
+                      className="w-full sm:w-auto"
+                    >
+                      <Github className="w-4 h-4 mr-2" />
+                      View Code
+                    </Button>
+                  )}
                 </div>
               </ModalFooter>
             </ModalContent>
