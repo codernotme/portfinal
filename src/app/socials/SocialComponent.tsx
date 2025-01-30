@@ -12,7 +12,7 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger
-} from "@/components/ui/tooltip";
+} from "../../components/ui/tooltip"; // Update the import path
 import Link from "next/link";
 import { faSackDollar } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
