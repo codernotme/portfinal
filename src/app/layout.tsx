@@ -1,7 +1,6 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import ScrollerAnimation from "@/components/ScrollAnimationWrapper";
 import {HeroUIProvider} from "@heroui/react";
 
 // Import the font with specific weights
@@ -25,7 +24,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={poppins.className}>
+      <body className={`${poppins.className} flex flex-col items-center justify-center`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -33,8 +32,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <HeroUIProvider>
-          <ScrollerAnimation/>
-          {children}
+            {children}
           </HeroUIProvider>
         </ThemeProvider>
       </body>

@@ -7,6 +7,7 @@ const FooterContainer = styled.footer`
   justify-content: center;
   display: flex;
   flex-direction: column;
+  padding: 20px;
 `;
 
 const Footer: React.FC = () => {
@@ -15,7 +16,7 @@ const Footer: React.FC = () => {
       <div className="flex flex-col justify-center items-center p-24">
         <h1
           style={{
-            fontWeight: "-moz-initial",
+            fontWeight: "bold",
             fontSize: "2rem",
             textAlign: "center"
           }}
@@ -24,7 +25,10 @@ const Footer: React.FC = () => {
         </h1>
         <p>
           Have a question? Reach out on{" "}
-          <a href="mailto:aryanbajpai2411@gmail.com" className="text-blue-600">
+          <a
+            href="mailto:aryanbajpai2411@gmail.com"
+            className="text-blue-600 hover:text-blue-800 transition-colors"
+          >
             Email.
           </a>
         </p>

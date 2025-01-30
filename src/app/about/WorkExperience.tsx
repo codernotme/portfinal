@@ -6,9 +6,36 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/component
 
 const workExperience = [
   {
-    company: "Ignitia Web Team",
+    company: "Tackle Studioz",
+    role: "Founder & CEO",
+    duration: "January 2025 - Present",
+    responsibilities: [
+      "Leading the vision, strategy, and growth of Tackle Studioz.",
+      "Overseeing the development of cutting-edge digital solutions.",
+      "Managing cross-functional teams to deliver high-quality products.",
+      "Driving innovation and staying ahead of industry trends.",
+      "Building strong client relationships and expanding business opportunities.",
+      "Ensuring seamless user experiences through strategic design and development.",
+      "Mentoring and guiding a team of developers and designers.",
+      "Spearheading AI-driven solutions to enhance digital experiences."
+    ],
+    logo: "/img/tackle.png",
+  },
+  {
+    company: "Ignitia2k25 Web Team",
+    role: "Senior Developer Lead",
+    duration: "December 2024 - Present",
+    responsibilities: [
+      "Created the Ignitia 2k25 website for the college fest.",
+      "Learned teamwork, industry practices, and meeting client expectations.",
+      "Technologies used: NextJS, MongoDB, TypeScript, TailwindCSS, Go, Docker, Kubernetes, AWS.",
+    ],
+    logo: "/img/ignitia2k25.jpg",
+  },
+  {
+    company: "Ignitia2k24 Web Team",
     role: "Frontend Developer",
-    duration: "April 2024",
+    duration: "December 2023 - April 2024",
     responsibilities: [
       "Created the Ignitia 2k24 website for the college fest.",
       "Learned teamwork, industry practices, and meeting client expectations.",
