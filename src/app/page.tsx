@@ -3,7 +3,6 @@ import React from "react";
 import Home from "./home/heroPage";
 import Card from "./card/page";
 import Footer from "@/components/Footer";
-import SocialFooter from "./socials/page";
 import About from "./about/page";
 
 export default function Main() {
@@ -14,7 +13,6 @@ export default function Main() {
         <About />
         <Card />
         <Footer />
-        <SocialFooter />
       </main>
     </>
   );
