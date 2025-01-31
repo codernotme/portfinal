@@ -8,7 +8,7 @@ const ThemeToggle: React.FC = () => {
   return (
     <button
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-      className="flex items-center justify-center p-2 rounded-full transition-all duration-300"
+      className="flex items-center justify-center rounded-full transition-all duration-300"
     >
       {theme === "light" ? (
         <MoonFilledIcon className="w-6 h-6" />

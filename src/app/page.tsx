@@ -4,15 +4,17 @@ import Home from "./home/heroPage";
 import Card from "./card/page";
 import Footer from "@/components/Footer";
 import About from "./about/page";
+import SocialFooter from "@/components/SocialComponent";
 
 export default function Main() {
   return (
     <>
-      <main className="flex flex-col items-center justify-between min-h-screen bg-background text-foreground">
+      <main className="flex flex-col min-h-screen bg-background">
         <Home />
         <About />
         <Card />
         <Footer />
+        <SocialFooter/>
       </main>
     </>
   );

@@ -131,7 +131,7 @@ export default function Projects() {
   const handleCloseModal = () => setModalOpenIndex(null)
 
   return (
-    <section className="py-12 bg-gradient-to-b from-background/10 via-background/30 to-background/50" id="projects">
+    <section className="py-12 mx-auto bg-gradient-to-b from-background/10 via-background/30 to-background/50" id="projects">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
@@ -148,7 +148,7 @@ export default function Projects() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="overflow-hidden h-full flex flex-col bg-background/50 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-colors duration-200">
+              <Card className="h-full flex flex-col backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-colors duration-200">
                 <CardHeader className="p-0">
                   <div className="relative h-48 w-full">
                     <Image

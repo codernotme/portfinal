@@ -39,7 +39,7 @@ export default function Home() {
           </motion.h1>
 
           <motion.h2
-            className="text-xl md:text-2xl font-semibold mb-6 text-primary/80"
+            className="text-xl md:text-2xl font- mb-6 text-primary/80"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1 }}

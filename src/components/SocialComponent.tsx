@@ -12,7 +12,7 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger
-} from "../../components/ui/tooltip"; // Update the import path
+} from "./ui/tooltip";
 import Link from "next/link";
 import { faSackDollar } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
@@ -22,11 +22,10 @@ export default function SocialFooter() {
     <motion.div
       initial={{ y: 100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      className="fixed bottom-4 left-1/2 transform -translate-x-1/2 py-3 px-4 md:px-6 lg:px-8 rounded-full shadow-lg flex space-x-4 md:space-x-6 lg:space-x-8 justify-center items-center"      
+      className="bottom-4 left-1/2 transform -translate-x-1/2 py-3 px-4 md:px-6 lg:px-8 rounded-full shadow-lg flex space-x-4 md:space-x-6 lg:space-x-8 justify-center items-center"
       style={{
         backdropFilter: "blur(10px)",
-        border: "0.01px solid",
-        background: "rgba(0, 0, 0, 0.5)" // Added background for better visibility
+        background: "rgba(0, 0, 0, 0.5)"
       }}
     >
       <TooltipProvider>

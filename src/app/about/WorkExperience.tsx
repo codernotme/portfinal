@@ -58,7 +58,7 @@ const workExperience = [
 
 export default function WorkExperience() {
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="max-w-2xl justify-center mx-auto p-2">
       <h3 className="text-3xl font-bold mb-6 text-center">Work Experience</h3>
       <div className="space-y-4">
         {workExperience.map((experience) => (

@@ -34,7 +34,7 @@
   }
 
   .dark {
-    --background: 0 0% 0%; /* Change to black */
+    --background: 0 0% 0%;
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
@@ -72,8 +72,6 @@
   }
   body {
     @apply bg-background text-foreground;
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     overflow-x: hidden; /* Prevent horizontal scroll */
   }
@@ -94,34 +92,12 @@
     transition: all 0.3s ease-in-out;
   }
 }
-
-/* Social links CSS start here */
-
-img {
-  opacity: 1 !important;
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
-.introbox{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: absolute;
-  width: 100%;
-  font-size: 7rem;
-  height: 100vh;
-  z-index: 1000;
-}
-
-.glass-effect {
-  backdrop-filter: blur(15px);
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: var(--radius, 10px);
-  width: fit-content;
-  padding: 1rem;
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease-in-out;
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 8s infinite ease-in-out;
 }
