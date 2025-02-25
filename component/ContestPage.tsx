@@ -1,196 +1,182 @@
-'use client';
-import { Trophy, Award, Medal } from 'lucide-react';
-import { useState } from 'react';
+"use client";
+import { Trophy, Award, Medal, X } from "lucide-react";
+import { useState } from "react";
+import Image from "next/image";
 
 interface ContestProps {
-    className?: string;
+  className?: string;
 }
 
 interface Achievement {
-    id: number;
-    title: string;
-    organization: string;
-    date: string;
-    description: string;
-    certificateUrl?: string;
-    image: string;
-    category: 'contest' | 'hackathon' | 'certification';
-    position?: string;
-    skills?: string[];
+  id: number;
+  title: string;
+  organization: string;
+  date: string;
+  description: string;
+  image: string;
+  category: "contest" | "hackathon" | "certification";
+  position?: string;
+  skills?: string[];
 }
 
 const achievements: Achievement[] = [
-    {
-        id: 1,
-        title: "Winner - National Coding Championship",
-        organization: "TechFest 2024",
-        date: "February 2024",
-        description: "First place in the national coding competition, solving complex algorithmic challenges and implementing efficient solutions.",
-        certificateUrl: "https://example.com/certificate1",
-        image: "/certificates/coding-championship.png",
-        category: "contest",
-        position: "1st Place",
-        skills: ["Algorithms", "Data Structures", "Problem Solving"]
-    },
-    {
-        id: 2,
-        title: "Best Innovation Award",
-        organization: "Global Hackathon 2023",
-        date: "November 2023",
-        description: "Developed an AI-powered solution for sustainable energy management, winning the best innovation award.",
-        certificateUrl: "https://example.com/certificate2",
-        image: "/certificates/hackathon-award.png",
-        category: "hackathon",
-        position: "Winner",
-        skills: ["AI/ML", "React", "Node.js", "MongoDB"]
-    },
-    // Add more achievements as needed
+  {
+    id: 1,
+    title: "Top 10 Finalist - HackIITK 2k25",
+    organization: "IIT Kanpur (C3I Hub)",
+    date: "November 2024 - February 2025",
+    description:
+      "Recognized as a Top 10 Finalist at HackIITK 2k25 for developing an innovative solution using AI and blockchain.",
+    image: "/certificates/hackiitk.jpg",
+    category: "hackathon",
+    position: "Top 10 Finalist",
+    skills: ["AI/ML", "Blockchain", "Next.js", "MongoDB"],
+  },
+  {
+    id: 2,
+    title: "AWS APAC Solutions Architecture",
+    organization: "AWS Forage",
+    date: "2024",
+    description:
+      "Completed AWS APAC Solutions Architecture program, gaining expertise in cloud computing, security, and networking.",
+    image: "/certificates/aws-forage.jpg",
+    category: "certification",
+    skills: ["AWS", "Cloud Computing", "DevOps"],
+  },
 ];
 
 export default function Contest({ className = "" }: ContestProps) {
-    const [selectedCategory, setSelectedCategory] = useState<string>('all');
-    const [selectedAchievement, setSelectedAchievement] = useState<Achievement | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [selectedAchievement, setSelectedAchievement] =
+    useState<Achievement | null>(null);
 
-    const filteredAchievements = selectedCategory === 'all'
-        ? achievements
-        : achievements.filter(achievement => achievement.category === selectedCategory);
+  const filteredAchievements =
+    selectedCategory === "all"
+      ? achievements
+      : achievements.filter(
+          (achievement) => achievement.category === selectedCategory
+        );
 
-    const getCategoryIcon = (category: string) => {
-        switch (category) {
-            case 'contest':
-                return <Trophy className="h-6 w-6" />;
-            case 'hackathon':
-                return <Award className="h-6 w-6" />;
-            case 'certification':
-                return <Medal className="h-6 w-6" />;
-            default:
-                return null;
-        }
-    };
+  const getCategoryIcon = (category: string) => {
+    switch (category) {
+      case "contest":
+        return <Trophy className="achievement-icon" />;
+      case "hackathon":
+        return <Award className="achievement-icon" />;
+      case "certification":
+        return <Medal className="achievement-icon" />;
+      default:
+        return null;
+    }
+  };
 
-    return (
-        <article className={`contests ${className}`} data-page="contests">
-            <header>
-                <h2 className="h2 article-title">Achievements</h2>
-            </header>
+  return (
+    <article className={`contests ${className}`} data-page="contests">
+      <header>
+        <h2 className="h2 article-title text-center achievements-title">Achievements</h2>
+      </header>
 
-            <div className="category-filters">
-                <button
-                    className={`category-btn ${selectedCategory === 'all' ? 'active' : ''}`}
-                    onClick={() => setSelectedCategory('all')}
-                >
-                    All
-                </button>
-                <button
-                    className={`category-btn ${selectedCategory === 'contest' ? 'active' : ''}`}
-                    onClick={() => setSelectedCategory('contest')}
-                >
-                    Contests
-                </button>
-                <button
-                    className={`category-btn ${selectedCategory === 'hackathon' ? 'active' : ''}`}
-                    onClick={() => setSelectedCategory('hackathon')}
-                >
-                    Hackathons
-                </button>
-                <button
-                    className={`category-btn ${selectedCategory === 'certification' ? 'active' : ''}`}
-                    onClick={() => setSelectedCategory('certification')}
-                >
-                    Certifications
-                </button>
+      {/* Category Filters */}
+      <div className="flex justify-center filter-list space-x-3 my-4">
+        {["all", "contest", "hackathon", "certification"].map((category) => (
+          <button
+            key={category}
+            className={`achievement-category ${
+              selectedCategory === category
+                ? "bg-purple-500 text-white"
+                : "bg-gray-200 hover:bg-gray-300"
+            }`}
+            onClick={() => setSelectedCategory(category)}
+          >
+            {category.charAt(0).toUpperCase() + category.slice(1)}
+          </button>
+        ))}
+      </div>
+
+      {/* Achievements Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4 achievements-container">
+        {filteredAchievements.map((achievement) => (
+          <div
+            key={achievement.id}
+            className="achievement-item bg-gray-900 text-white p-4 rounded-lg shadow-lg cursor-pointer transition hover:scale-105"
+            onClick={() => setSelectedAchievement(achievement)}
+          >
+            <div className="flex items-center gap-3">
+              <div className="achievement-icon">{getCategoryIcon(achievement.category)}</div>
+              <div>
+                <h3 className="font-semibold text-lg achievement-text">{achievement.title}</h3>
+                <p className="text-gray-400">{achievement.organization}</p>
+                <p className="text-sm text-gray-500 date">{achievement.date}</p>
+              </div>
             </div>
-
-            <div className="achievements-grid">
-                {filteredAchievements.map(achievement => (
-                    <div
-                        key={achievement.id}
-                        className="achievement-card"
-                        onClick={() => setSelectedAchievement(achievement)}
-                    >
-                        <div className="achievement-icon">
-                            {getCategoryIcon(achievement.category)}
-                        </div>
-                        <div className="achievement-content">
-                            <h3 className="achievement-title">{achievement.title}</h3>
-                            <p className="achievement-org">{achievement.organization}</p>
-                            <p className="achievement-date">{achievement.date}</p>
-                            {achievement.position && (
-                                <div className="achievement-position">
-                                    <Trophy className="h-4 w-4" />
-                                    <span>{achievement.position}</span>
-                                </div>
-                            )}
-                        </div>
-                        {achievement.certificateUrl && (
-                            <a
-                                href={achievement.certificateUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="view-certificate"
-                                onClick={(e) => e.stopPropagation()}
-                            >
-                                View Certificate
-                            </a>
-                        )}
-                    </div>
-                ))}
-            </div>
-
-            {/* Achievement Modal */}
-            {selectedAchievement && (
-                <div
-                    className="achievement-modal-overlay"
-                    onClick={() => setSelectedAchievement(null)}
-                >
-                    <div
-                        className="achievement-modal"
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <button
-                            className="modal-close"
-                            onClick={() => setSelectedAchievement(null)}
-                        >
-                            ×
-                        </button>
-                        <div className="modal-content">
-                            <div className="modal-header">
-                                <div className="modal-icon">
-                                    {getCategoryIcon(selectedAchievement.category)}
-                                </div>
-                                <h2>{selectedAchievement.title}</h2>
-                            </div>
-                            <div className="modal-body">
-                                <p className="modal-description">
-                                    {selectedAchievement.description}
-                                </p>
-                                {selectedAchievement.skills && (
-                                    <div className="skills-section">
-                                        <h3>Skills Demonstrated</h3>
-                                        <div className="skills-tags">
-                                            {selectedAchievement.skills.map((skill, index) => (
-                                                <span key={index} className="skill-tag">
-                                                    {skill}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    </div>
-                                )}
-                                {selectedAchievement.certificateUrl && (
-                                    <a
-                                        href={selectedAchievement.certificateUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="certificate-link"
-                                    >
-                                        View Certificate
-                                    </a>
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            {achievement.position && (
+              <div className="mt-3 flex items-center text-yellow-300">
+                <Trophy className="h-4 w-4 mr-2" />
+                <span>{achievement.position}</span>
+              </div>
             )}
-        </article>
-    );
+          </div>
+        ))}
+      </div>
+
+      {/* Achievement Modal */}
+      {selectedAchievement && (
+        <div
+          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50"
+          onClick={() => setSelectedAchievement(null)}
+        >
+          <div
+            className="bg-white text-black rounded-lg shadow-lg p-6 w-[90%] sm:w-[600px] relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute top-3 right-3 text-gray-700 hover:text-black"
+              onClick={() => setSelectedAchievement(null)}
+            >
+              <X className="h-6 w-6" />
+            </button>
+
+            <div className="modal-content text-center">
+              <div className="modal-header flex justify-center items-center space-x-2">
+                <div className="modal-icon">{getCategoryIcon(selectedAchievement.category)}</div>
+                <h2 className="text-xl font-bold">{selectedAchievement.title}</h2>
+              </div>
+
+              <div className="mt-4">
+                <p className="text-gray-700">{selectedAchievement.description}</p>
+              </div>
+
+              {/* Skills Section */}
+              {selectedAchievement.skills && (
+                <div className="skills-section mt-4">
+                  <h3 className="text-lg font-semibold">Skills Demonstrated</h3>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {selectedAchievement.skills.map((skill, index) => (
+                      <span
+                        key={index}
+                        className="px-3 py-1 bg-purple-500 text-white rounded-full text-sm"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Image Display */}
+              <div className="mt-4">
+                <Image
+                  src={selectedAchievement.image}
+                  alt={selectedAchievement.title}
+                  width={500}
+                  height={300}
+                  className="rounded-lg shadow-md"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </article>
+  );
 }

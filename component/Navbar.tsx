@@ -34,7 +34,7 @@ export default function Navbar({ activePage, setActivePage }: NavbarProps) {
                         className="navbar-link"
                         onClick={() => handleNavClick("contests")}
                     >
-                        Achievements
+                        Contests
                     </button>
                 </li>
                 <li className={`navbar-item ${activePage === "portfolio" ? "active" : ""}`}>

@@ -1,3 +1,4 @@
+"use client";
 import { Image } from "@heroui/react";
 
 interface BlogProps {
@@ -14,116 +15,77 @@ export default function Blog({ className = "" }: BlogProps) {
             <section className="blog-posts">
                 <ul className="blog-posts-list">
                     <li className="blog-post-item">
-                        <a href="#">
+                        <a href="https://codernotme.hashnode.dev/understanding-load-balancing-in-modern-cloudtech-companies">
                             <figure className="blog-banner-box">
-                                <Image src="https://i.postimg.cc/DysCZrWs/blog-1.jpg" alt="Design conferences in 2024" loading="lazy" />
+                                <Image src="blog/balance.png" alt="Understanding Load Balancing in Modern CloudTech Companies" loading="lazy" />
                             </figure>
 
                             <div className="blog-content">
                                 <div className="blog-meta">
-                                    <p className="blog-category">Design</p>
+                                    <p className="blog-category">Cloud Technology</p>
                                     <span className="dot"></span>
-                                    <time dateTime="2024-02-23">Feb 23, 2024</time>
+                                    <time dateTime="2024-05-15">May 15, 2024</time>
                                 </div>
 
-                                <h3 className="h3 blog-item-title">Design conferences in 2024</h3>
-                                <p className="blog-text">In 2024, several exciting design conferences are set to take place, offering opportunities for professionals and enthusiasts to connect, learn, and share innovative ideas.</p>
+                                <h3 className="h3 blog-item-title">Understanding Load Balancing in Modern CloudTech Companies</h3>
+                                <p className="blog-text">Explore the intricacies of load balancing in cloud environments, focusing on strategies to distribute workloads efficiently and ensure high availability.</p>
                             </div>
                         </a>
                     </li>
 
                     <li className="blog-post-item">
-                        <a href="#">
+                        <a href="https://codernotme.hashnode.dev/decoding-dsa">
                             <figure className="blog-banner-box">
-                                <Image src="https://i.postimg.cc/QC7qFDMs/blog-2.jpg" alt="Best fonts every designer" loading="lazy" />
+                                <Image src="blog/dsa.png" alt="Decoding DSA: Navigating Coding Challenges and Interviews" loading="lazy" />
                             </figure>
-
 
                             <div className="blog-content">
                                 <div className="blog-meta">
-                                    <p className="blog-category">Design</p>
+                                    <p className="blog-category">Programming</p>
                                     <span className="dot"></span>
-                                    <time dateTime="2024-01-29">Jan 29, 2024</time>
+                                    <time dateTime="2024-05-12">May 12, 2024</time>
                                 </div>
 
-                                <h3 className="h3 blog-item-title">Best fonts every designer</h3>
-                                <p className="blog-text">When it comes to typography, choosing the right font is essential for effective design. In this article, I&apos;ll bring a brief overview of some of the best fonts that every designer should consider incorporating into their toolkit.</p>
+                                <h3 className="h3 blog-item-title">Decoding DSA: Navigating Coding Challenges and Interviews</h3>
+                                <p className="blog-text">Delve into Data Structures and Algorithms (DSA), understanding their importance in computer science and how they form the foundation for efficient programming and problem-solving.</p>
                             </div>
                         </a>
                     </li>
 
                     <li className="blog-post-item">
-                        <a href="#">
+                        <a href="https://codernotme.hashnode.dev/blockchain-technology-unpacking-its-potential-and-limitations-in-slow-motion">
                             <figure className="blog-banner-box">
-                                <Image src="https://i.postimg.cc/W1T71QcL/blog-3.jpg" alt="Design digest #80" loading="lazy" />
+                                <Image src="blog/blockchain.png" alt="Blockchain Technology: Unpacking Its Potential and Limitations in Slow Motion" loading="lazy" />
                             </figure>
 
                             <div className="blog-content">
                                 <div className="blog-meta">
-                                    <p className="blog-category">Design</p>
+                                    <p className="blog-category">Blockchain</p>
                                     <span className="dot"></span>
-                                    <time dateTime="2023-12-20">Dec 20, 2023</time>
+                                    <time dateTime="2024-05-10">May 10, 2024</time>
                                 </div>
 
-                                <h3 className="h3 blog-item-title">Design digest #80</h3>
-                                <p className="blog-text">Hello, my friends. In this Design Digest, I&apos;ll show you a curated collection of the latest trends, insights, and innovations in the design world. This edition highlights key themes and discussions that are shaping the future of design.</p>
+                                <h3 className="h3 blog-item-title">Blockchain Technology: Unpacking Its Potential and Limitations in Slow Motion</h3>
+                                <p className="blog-text">Examine the potential and challenges of blockchain technology, exploring its applications, benefits, and the reasons behind its gradual adoption.</p>
                             </div>
                         </a>
                     </li>
 
                     <li className="blog-post-item">
-                        <a href="#">
+                        <a href="https://codernotme.hashnode.dev/the-serverless-revolution">
                             <figure className="blog-banner-box">
-                                <Image src="https://i.postimg.cc/2S0n8yxh/blog-4.jpg" alt="2023 UI interactions" loading="lazy" />
+                                <Image src="blog/serverless.png" alt="The Serverless Revolution: A New Era of Agile and Cost-Effective Hosting" loading="lazy" />
                             </figure>
 
                             <div className="blog-content">
                                 <div className="blog-meta">
-                                    <p className="blog-category">Design</p>
+                                    <p className="blog-category">Web Hosting</p>
                                     <span className="dot"></span>
-                                    <time dateTime="2023-11-29">Nov 29, 2023</time>
+                                    <time dateTime="2024-05-04">May 4, 2024</time>
                                 </div>
 
-                                <h3 className="h3 blog-item-title">2023 UI interactions</h3>
-                                <p className="blog-text">As we move into 2024, 2023 was marked by the rapidly evolution of the landscape of UI interactions, driven by advancements in technology and user expectations. Dive with me in this text to see the main areas changed in this year.</p>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li className="blog-post-item">
-                        <a href="#">
-                            <figure className="blog-banner-box">
-                                <Image src="https://i.postimg.cc/YCCmVkw9/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy" />
-                            </figure>
-
-                            <div className="blog-content">
-                                <div className="blog-meta">
-                                    <p className="blog-category">Design</p>
-                                    <span className="dot"></span>
-                                    <time dateTime="2023-11-12">Nov 12, 2023</time>
-                                </div>
-
-                                <h3 className="h3 blog-item-title">The forgotten art of spacing</h3>
-                                <p className="blog-text">In the realm of design, spacing is often an overlooked yet crucial element that can significantly impact the overall aesthetic and functionality of a composition. This post will emphasize the importance of white space, margins, and padding in creating visually appealing and effective designs.</p>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li className="blog-post-item">
-                        <a href="#">
-                            <figure className="blog-banner-box">
-                                <Image src="https://i.postimg.cc/zBCBvP16/blog-6.jpg" alt="Design digest #79" loading="lazy" />
-                            </figure>
-
-                            <div className="blog-content">
-                                <div className="blog-meta">
-                                    <p className="blog-category">Design</p>
-                                    <span className="dot"></span>
-                                    <time dateTime="2023-10-20">Oct 20, 2023</time>
-                                </div>
-
-                                <h3 className="h3 blog-item-title">Design digest #79</h3>
-                                <p className="blog-text">Hi, my friends. In this Design Digest I&apos;ll focus in the tools and resources that we use daily in our projects. Also, I&apos;ll include examples of software recommendations, online courses, and design communities that foster collaboration and learning.</p>
+                                <h3 className="h3 blog-item-title">The Serverless Revolution: A New Era of Agile and Cost-Effective Hosting</h3>
+                                <p className="blog-text">Discover the principles of serverless architecture, its key features, and how it offers a more agile and cost-effective approach to web hosting compared to traditional methods.</p>
                             </div>
                         </a>
                     </li>

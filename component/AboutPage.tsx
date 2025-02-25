@@ -57,9 +57,10 @@ export default function About({ className = "" }: AboutProps) {
                     </header>
 
                     <section className="about-text">
-                        <p>I&apos;m Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media. I enjoy turning complex problems into simple, beautiful and intuitive designs.</p>
-                        <p>My job is to build your website so that it is functional and user-friendly but at the same time attractive. Moreover, I add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring across your message and identity in the most creative way. I created web design for many famous brand companies.</p>
+                        <p>I&apos;m a dynamic Full-Stack Developer from Kanpur, India, specializing in building high-performance web applications with Next.js, React, and TypeScript. My expertise extends to cloud integration, backend architecture, and database optimization, ensuring scalable and efficient solutions.</p>
+                        <p>My goal is to create intuitive, user-centered digital experiences that seamlessly merge functionality with aesthetics. From developing interactive games to architecting social platforms, I bring creativity and technical excellence to every project. Recently, I was recognized as a Top 10 Finalist at HackIITK 2k24, highlighting my problem-solving skills and innovative approach to development.</p>
                     </section>
+
 
                     <section className="service">
                         <h3 className="h3 service-title">What I&apos;m doing</h3>
@@ -198,7 +199,7 @@ export default function About({ className = "" }: AboutProps) {
                         </section>
                     </div>
 
-                    <section className="clients">
+                    {/*<section className="clients">
                         <h3 className="h3 clients-title">Clients</h3>
 
                         <ul className="clients-list has-scrollbar">
@@ -226,7 +227,7 @@ export default function About({ className = "" }: AboutProps) {
                                 <a href="#"><Image src="https://i.postimg.cc/SsWDN8NV/logo-6-color.png" alt="logo" /></a>
                             </li>
                         </ul>
-                    </section>
+                    </section>*/}
                 </article>
             </div>
         </>

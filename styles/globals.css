@@ -5,25 +5,25 @@
 
 
 :root {
-  --bg-gradient-onyx: linear-gradient(to bottom right, hsl(240, 1%, 25%) 3%, hsl(0, 0%, 19%) 97%);
-  --bg-gradient-jet: linear-gradient(to bottom right, hsla(240, 1%, 18%, .251) 3%, hsla(240, 2%, 11%, 0) 100%), hsl(240, 2%, 13%);
-  --bg-gradient-yellow1: linear-gradient(to bottom right, hsl(45, 100%, 71%) 0%, hsla(36, 100%, 69%, 0) 50%);
-  --bg-gradient-yellow2: linear-gradient(135deg, hsla(45, 100%, 71%, .251) 0%, hsla(35, 100%, 68%, 0) 59.86%), hsl(240, 2%, 13%);
-  --border-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%);
-  --text-gradient-yellow: linear-gradient(to right, hsl(45, 100%, 72%), hsl(35, 100%, 68%));
+  --bg-gradient-onyx: linear-gradient(to bottom right, hsl(260, 20%, 20%) 3%, hsl(250, 15%, 15%) 97%);
+  --bg-gradient-jet: linear-gradient(to bottom right, hsla(260, 25%, 18%, 0.251) 3%, hsla(250, 20%, 10%, 0) 100%), hsl(250, 22%, 12%);
+  --bg-gradient-yellow1: linear-gradient(to bottom right, hsl(270, 100%, 60%) 0%, hsla(270, 100%, 40%, 0) 50%);
+  --bg-gradient-yellow2: linear-gradient(135deg, hsla(270, 100%, 50%, 0.251) 0%, hsla(260, 100%, 40%, 0) 59.86%), hsl(250, 22%, 12%);
+  --border-gradient-onyx: linear-gradient(to bottom right, hsl(260, 15%, 25%) 0%, hsla(250, 10%, 25%, 0) 50%);
+  --text-gradient-yellow: linear-gradient(to right, hsl(270, 100%, 72%), hsl(260, 100%, 68%));
 
-  --jet: hsl(0, 0%, 22%);
-  --onyx: hsl(240, 1%, 17%);
-  --eerie-black1: hsl(240, 2%, 13%);
-  --eerie-black2: hsl(240, 2%, 12%);
-  --smoky-black: hsl(0, 0%, 7%);
+  --jet: hsl(260, 15%, 22%);
+  --onyx: hsl(260, 20%, 17%);
+  --eerie-black1: hsl(260, 22%, 13%);
+  --eerie-black2: hsl(260, 22%, 12%);
+  --smoky-black: hsl(260, 25%, 7%);
   --white1: hsl(0, 0%, 100%);
   --white2: hsl(0, 0%, 98%);
-  --orange-yellow-crayola: hsl(45, 100%, 72%);
-  --vegas-gold: hsl(45, 54%, 58%);
-  --light-gray: hsl(0, 0%, 84%);
-  --light-gray70: hsla(0, 0%, 84%, .7);
-  --bittersweet-shimmer: hsl(0, 43%, 51%);
+  --orange-yellow-crayola: hsl(270, 100%, 72%);
+  --vegas-gold: hsl(270, 54%, 58%);
+  --light-gray: hsl(260, 10%, 84%);
+  --light-gray70: hsla(260, 10%, 84%, 0.7);
+  --bittersweet-shimmer: hsl(280, 43%, 51%);
 
   --ff-poppins: 'Poppins', sans-serif;
 
@@ -414,7 +414,7 @@ article.active {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: hsla(240, 1%, 17%, .75);
+  background: hsla(250, 20%, 17%, .75);
   backdrop-filter: blur(10px);
   border: 1px solid var(--jet);
   border-radius: 12px 12px 0 0;
@@ -1203,10 +1203,6 @@ textarea.form-input::-webkit-realizer {
   transition: var(--transition1);
 }
 
-.form-btn ion-icon {
-  font-size: 16px;
-}
-
 .form-btn:hover {
   background: var(--bg-gradient-yellow1);
 }
@@ -1803,4 +1799,63 @@ textarea.form-input::-webkit-realizer {
   align-items: center;
   gap: 10px;
   padding: 10px;
+}
+
+.achievements-container {
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+}
+
+.achievements-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.achievement-category {
+    color: #d1d1d1;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.achievement-category:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.achievement-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: 0.3s ease-in-out;
+}
+
+.achievement-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.achievement-icon {
+    font-size: 1.5rem;
+    color: #ffcc00;  /* Gold-like color */
+}
+
+.achievement-text {
+    color: #e0e0e0;
+    font-size: 1rem;
+}
+
+.date {
+    font-size: 0.9rem;
+    color: #b0b0b0;
 }
