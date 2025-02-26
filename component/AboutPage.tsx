@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { Image } from "@heroui/react";
 import { XIcon } from "lucide-react";
 
-
 interface AboutProps {
     className?: string;
 }
@@ -61,52 +60,51 @@ export default function About({ className = "" }: AboutProps) {
                         <p>My goal is to create intuitive, user-centered digital experiences that seamlessly merge functionality with aesthetics. From developing interactive games to architecting social platforms, I bring creativity and technical excellence to every project. Recently, I was recognized as a Top 10 Finalist at HackIITK 2k24, highlighting my problem-solving skills and innovative approach to development.</p>
                     </section>
 
-
                     <section className="service">
                         <h3 className="h3 service-title">What I&apos;m doing</h3>
-
                         <ul className="service-list">
                             <li className="service-item">
                                 <div className="service-icon-box">
                                     <Image src="https://i.postimg.cc/4389jZkP/icon-design.png" alt="icon" width="40" />
                                 </div>
-
                                 <div className="service-content-box">
-                                    <h4 className="h4 service-item-title">Web Design</h4>
-                                    <p className="service-item-text">The most modern and high-quality design made at a professional level.</p>
+                                    <h4 className="h4 service-item-title">Innovator</h4>
+                                    <p className="service-item-text">
+                                        Leading innovative digital solutions at <strong>Tackle Studioz</strong>.
+                                    </p>
                                 </div>
                             </li>
-
                             <li className="service-item">
                                 <div className="service-icon-box">
                                     <Image src="https://i.postimg.cc/ZqgqrqzG/icon-dev.png" alt="icon" width="40" />
                                 </div>
-
                                 <div className="service-content-box">
-                                    <h4 className="h4 service-item-title">Web development</h4>
-                                    <p className="service-item-text">High-quality development of sites at the professional level.</p>
+                                    <h4 className="h4 service-item-title">Full-Stack Development</h4>
+                                    <p className="service-item-text">
+                                        Developing high-performance web & mobile apps with <strong>Next.js, React, Node.js, and MongoDB</strong>.
+                                    </p>
                                 </div>
                             </li>
-
                             <li className="service-item">
                                 <div className="service-icon-box">
                                     <Image src="https://i.postimg.cc/xjLdzYxZ/icon-app.png" alt="icon" width="40" />
                                 </div>
-
                                 <div className="service-content-box">
-                                    <h4 className="h4 service-item-title">Mobile apps</h4>
-                                    <p className="service-item-text">Professional development of applications for iOS and Android.</p>
+                                    <h4 className="h4 service-item-title">AI & Automation</h4>
+                                    <p className="service-item-text">
+                                        Implementing <strong>automation, ML models, and chatbots</strong> to enhance efficiency.
+                                    </p>
                                 </div>
                             </li>
-
                             <li className="service-item">
                                 <div className="service-icon-box">
                                     <Image src="https://i.postimg.cc/0NL8zHpx/icon-photo.png" alt="icon" width="40" />
                                 </div>
-
                                 <div className="service-content-box">
-                                    <h4 className="h4 service-item-title">Photography</h4>
-                                    <p className="service-item-text">I make high-quality photos of any category at a professional level.</p>
+                                    <h4 className="h4 service-item-title">UI/UX & Branding</h4>
+                                    <p className="service-item-text">
+                                        Designing interfaces with <strong>Figma, Tailwind CSS, and Framer Motion</strong>.
+                                    </p>
                                 </div>
                             </li>
                         </ul>
@@ -122,10 +120,10 @@ export default function About({ className = "" }: AboutProps) {
                                         <Image src="https://i.postimg.cc/zGDHfn3G/avatar-1.png" alt="avatar" data-testimonials-avatar width="60" />
                                     </figure>
 
-                                    <h4 className="h4 testimonials-item-title" data-testimonials-title>Daniel Lewis</h4>
+                                    <h4 className="h4 testimonials-item-title" data-testimonials-title>Anshu Gupta</h4>
 
                                     <div className="testimonials-text" data-testimonials-text>
-                                        <p>Aryan was hired to create a corporate identity. It&apos;s modern, clean and with a beautiful design that got a lot of praises from colleagues and visitors. We were very pleased with the work done. He has a lot of experience and is very concerned about the needs of client.</p>
+                                        <p>Aryan created a modern and clean corporate identity for us. The design received a lot of praise from colleagues and visitors. He is very experienced and attentive to client needs.</p>
                                     </div>
                                 </div>
                             </li>
@@ -136,10 +134,10 @@ export default function About({ className = "" }: AboutProps) {
                                         <Image src="https://i.postimg.cc/DwY0yHtx/avatar-2.png" alt="avatar" data-testimonials-avatar width="60" />
                                     </figure>
 
-                                    <h4 className="h4 testimonials-item-title" data-testimonials-title>Jessica Miller</h4>
+                                    <h4 className="h4 testimonials-item-title" data-testimonials-title>Kritika Srivastava</h4>
 
                                     <div className="testimonials-text" data-testimonials-text>
-                                        <p>Working with Aryan has been an absolute pleasure. I was impressed with his attention to detail, his web design skills and his professional approach to our timelines and processes.</p>
+                                        <p>Working with Aryan was a pleasure. His attention to detail, web design skills, and professional approach to timelines and processes were impressive.</p>
                                     </div>
                                 </div>
                             </li>
@@ -150,7 +148,7 @@ export default function About({ className = "" }: AboutProps) {
                                         <Image src="https://i.postimg.cc/fRFWhX9F/avatar-3.png" alt="avatar" data-testimonials-avatar width="60" />
                                     </figure>
 
-                                    <h4 className="h4 testimonials-item-title" data-testimonials-title>Emily Evans</h4>
+                                    <h4 className="h4 testimonials-item-title" data-testimonials-title>Omisha Singh</h4>
 
                                     <div className="testimonials-text" data-testimonials-text>
                                         <p>I couldn&apos;t be happier with the website that Aryan created for us. His attention to detail and creativity is unmatched. Our clients frequently compliment the design, and it has significantly improved our brand image.</p>
@@ -164,7 +162,7 @@ export default function About({ className = "" }: AboutProps) {
                                         <Image src="https://i.postimg.cc/zXv1Xv81/avatar-4.png" alt="avatar" data-testimonials-avatar width="60" />
                                     </figure>
 
-                                    <h4 className="h4 testimonials-item-title" data-testimonials-title>Henry Williams</h4>
+                                    <h4 className="h4 testimonials-item-title" data-testimonials-title>Ayush Verma</h4>
 
                                     <div className="testimonials-text" data-testimonials-text>
                                         <p>I was overwhelmed with the thought of redesigning my online store, but Aryan made the process seamless. The site is not only visually appealing but also optimized for conversions. I&apos;ve seen a 50% increase in traffic since the launch!</p>

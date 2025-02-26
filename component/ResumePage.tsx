@@ -41,9 +41,14 @@ export default function Resume({ className = "" }: ResumeProps) {
 
           <ol className="timeline-list">
             <li className="timeline-item">
+              <h4 className="h4 timeline-item-title">Founder & CEO - Tackle Studioz</h4>
+              <span>January 2025 - Present</span>
+              <p className="timeline-text">Spearheading innovation at Tackle Studioz, a digital solutions company specializing in SaaS, PaaS, AI-driven products, and web development. Leading a team to build cutting-edge, accessible, and scalable solutions that empower businesses and individuals.</p>
+            </li>
+            <li className="timeline-item">
               <h4 className="h4 timeline-item-title">Senior Dev Lead - Ignitia2k25 College Fest Website</h4>
               <span>Dec 2024 - Present</span>
-              <p className="timeline-text">Leading the development of the Ignitia2k25 website for PSIT's college fest, implementing scalable solutions and ensuring an interactive user experience.</p>
+              <p className="timeline-text">Leading the development of the Ignitia2k25 website for PSIT’s college fest, implementing scalable solutions and ensuring an interactive user experience.</p>
             </li>
             <li className="timeline-item">
               <h4 className="h4 timeline-item-title">Frontend Developer - Ignitia2k24 College Fest Website</h4>

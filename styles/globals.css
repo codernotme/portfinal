@@ -109,7 +109,11 @@ body {
   background: var(--smoky-black);
 }
 
-.main {
+.backgro{
+  background: var(--smoky-black);
+}
+
+main {
   margin: 15px 12px;
   margin-bottom: 75px;
   min-width: 259px;
@@ -121,7 +125,6 @@ article {
   border: 1px solid var(--jet);
   border-radius: 20px;
   box-shadow: var(--shadow1);
-  z-index: 1;
   padding: 15px;
 }
 
@@ -1979,12 +1982,10 @@ textarea.form-input::-webkit-realizer {
     font-size: 0.9rem;
     color: #b0b0b0;
     padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 20px 20px 20px 20px;
     background: rgba(255, 255, 255, 0.1);
-    margin-left: 10px;
     align-items: center;
     flex-direction: row;
-    font-weight: 600;
 }
 
 .card-foot{
@@ -1993,7 +1994,6 @@ textarea.form-input::-webkit-realizer {
     align-items: center;
     justify-content: space-between;
     margin-top: 10px;
-    padding: 10px;
 }
 .project-btn{
     padding: 5px 10px;
@@ -2019,10 +2019,10 @@ textarea.form-input::-webkit-realizer {
   overflow-y: auto;
   max-height: 85vh;
   color: var(--white1);
-  animation: modalFade 0.3s ease-in-out;
+  animation: modalFade1 0.3s ease-in-out;
 }
 
-@keyframes modalFade {
+@keyframes modalFade1 {
   0% {
     opacity: 0;
     transform: scale(0.9);
@@ -2093,4 +2093,129 @@ textarea.form-input::-webkit-realizer {
 .modal-content1 .project-btn1:hover {
   background: var(--orange-yellow-crayola);
   color: var(--eerie-black2);
+}
+
+@media (max-width: 768px) {
+  .achievements-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .service-item {
+    padding: 15px;
+  }
+
+  .modal-content1 {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .modal-header1 {
+    padding: 10px 15px;
+    margin: -20px -20px 15px -20px;
+  }
+
+  .modal-close-btn1 {
+    width: 30px;
+    height: 30px;
+  }
+
+  .project-btn {
+    padding: 8px 12px;
+  }
+
+  .badge {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .achievements-title {
+    font-size: 1.5rem;
+  }
+
+  .service-item-title {
+    font-size: 1rem;
+  }
+
+  .service-item-text {
+    font-size: 0.9rem;
+  }
+
+  .date {
+    font-size: 0.8rem;
+  }
+
+  .modal-content1 {
+    padding: 15px;
+  }
+
+  .modal-header1 {
+    padding: 8px 10px;
+    margin: -15px -15px 10px -15px;
+  }
+
+  .modal-close-btn1 {
+    width: 25px;
+    height: 25px;
+  }
+
+  .project-btn {
+    padding: 6px 10px;
+  }
+
+  .badge {
+    font-size: 0.7rem;
+    padding: 3px 6px;
+  }
+}
+
+.btn-web{
+  background-color: cornflowerblue;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.btn-web:hover{
+  background-color: darkblue;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.btn-git{
+  background-color: black;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.btn-git:hover{
+  background-color: darkslategray;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.proj{
+  padding: 5px 10px;
+  background-color: rgba(135, 107, 171, 0.293);
+  border-radius: 10px 10px 10px 10px;
+  margin: 10px 0px;
+}
+.tech{
+  color: var(--light-gray);
+  font-size: var(--fs6);
+  padding: 5px 1px;
+}
+
+.proj-img{
+  width: 100%;
+  object-fit: fill;
+  transition: var(--transition1);
+  border-radius: 10px 10px 10px 10px;
+  align-items: center;
+  justify-content: center;
 }

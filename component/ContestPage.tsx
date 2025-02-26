@@ -69,10 +69,9 @@ export default function Contest({ className = "" }: ContestProps) {
   return (
     <article className={`contests ${className}`} data-page="contests">
       <header>
-        <h2 className="h2 article-title text-center achievements-title">Achievements</h2>
+        <h2 className="h2 article-title">Achievements</h2>
       </header>
 
-      {/* Category Filters */}
       <div className="flex justify-center filter-list space-x-3 my-4">
         {["all", "hackathon", "certification"].map((category) => (
           <button
@@ -85,33 +84,31 @@ export default function Contest({ className = "" }: ContestProps) {
         ))}
       </div>
 
-      {/* Achievements Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4 achievements-container">
         {filteredAchievements.map((achievement) => (
           <div
             key={achievement.id}
-            className="achievement-item bg-gray-900 text-white p-4 rounded-lg shadow-lg cursor-pointer transition hover:scale-105"
+            className="service-item bg-gray-900 text-white p-4 rounded-lg shadow-lg cursor-pointer transition hover:scale-105"
             onClick={() => setSelectedAchievement(achievement)}
           >
             <div className="flex items-center gap-3">
-              <div className="achievement-icon">{getCategoryIcon(achievement.category)}</div>
+              <div className="service-icon-box">{getCategoryIcon(achievement.category)}</div>
               <div>
-                <h3 className="font-semibold text-lg achievement-text">{achievement.title}</h3>
-                <p className="text-gray-400">{achievement.organization}</p>
+                <h3 className="font-semibold text-lg service-item-title h4">{achievement.title}</h3>
+                <p className="service-item-text">{achievement.organization}</p>
                 <p className="text-sm text-gray-500 date">{achievement.date}</p>
               </div>
             </div>
             {achievement.position && (
-              <div className="mt-3 flex items-center text-yellow-300">
-                <Trophy className="h-4 w-4 mr-2" />
-                <span>{achievement.position}</span>
+              <div className="service-icon-box">
+                <Trophy className="service-icon-box" />
+                <span className="service-item-text">{achievement.position}</span>
               </div>
             )}
           </div>
         ))}
       </div>
 
-      {/* Achievement Modal */}
       {selectedAchievement && (
         <div className="modal-overlay" onClick={() => setSelectedAchievement(null)}>
           <Card className="modal-content1" onClick={(e) => e.stopPropagation()}>
@@ -119,30 +116,28 @@ export default function Contest({ className = "" }: ContestProps) {
               <X className="h-6 w-6" />
             </button>
 
-            <CardHeader className="modal-header1 flex justify-center items-center space-x-2">
+            <CardHeader className="modal-header1 service-item-title">
               <div className="modal-icon1">{getCategoryIcon(selectedAchievement.category)}</div>
               <h2 className="text-xl font-bold">{selectedAchievement.title}</h2>
             </CardHeader>
 
-            <CardBody>
-              {/* Image Display */}
+            <CardBody className="service-content-box">
               <div className="mt-4">
                 <Image
                   src={selectedAchievement.image}
                   alt={selectedAchievement.title}
                   width={500}
                   height={300}
-                  className="rounded-lg shadow-md"
+                  className="rounded-lg shadow-md proj-img"
                 />
               </div>
               <div className="mt-4">
-                <p className="text-gray-300">{selectedAchievement.description}</p>
+                <p className="text-gray-300 proj">{selectedAchievement.description}</p>
               </div>
 
-              {/* Skills Section */}
               {selectedAchievement.skills && (
                 <div className="skills-section mt-4">
-                  <h3 className="text-lg font-semibold">Skills Demonstrated</h3>
+                  <h3 className="tech">Skills Demonstrated</h3>
                   <div className="flex flex-wrap gap-2 mt-2 badge-1">
                     {selectedAchievement.skills.map((skill, index) => (
                       <Badge key={index} variant="default" className="badge">
@@ -152,7 +147,6 @@ export default function Contest({ className = "" }: ContestProps) {
                   </div>
                 </div>
               )}
-
             </CardBody>
           </Card>
         </div>

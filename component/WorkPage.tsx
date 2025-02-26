@@ -1,5 +1,5 @@
 'use client';
-import { Image, Card, CardHeader, CardBody, CardFooter } from '@heroui/react';
+import { Image, Card, CardHeader, CardBody, CardFooter} from '@heroui/react';
 import { Zap, Star, Clock, Construction, ChevronDown, EyeIcon, X } from 'lucide-react';
 import React, { useState } from 'react';
 import { Badge } from './badge';
@@ -36,7 +36,7 @@ const projects: Project[] = [
     websiteLink: "https://vybe-nu.vercel.app/",
     githubLink: "https://github.com/codernotme/vybe",
     content:
-      "Designed to foster collaboration, build communities, and facilitate mentorship, VYBE redefines campus social interactions. Click the link below.",
+      "Designed to foster collaboration, build communities, and facilitate mentorship, VYBE redefines campus social interactions.",
     image: "/img/vybe.png",
     tags: ["Chat App", "Next.js", "Convex", "Clerk"],
     priority: true,
@@ -51,7 +51,7 @@ const projects: Project[] = [
     websiteLink: "https://socialmed-echo.vercel.app/",
     githubLink: "https://github.com/codernotme/echo",
     content:
-      "It's a platform that enables users to chat with others, share ideas, and much more. To check out the alpha version, click the link below.",
+      "It's a platform that enables users to chat with others, share ideas, and much more. To check out the alpha version,",
     image: "/img/echo.png",
     tags: ["Chat App", "Next.js", "Convex", "Clerk"],
     priority: true,
@@ -63,7 +63,7 @@ const projects: Project[] = [
     title: "Chess App",
     description: "Chess game using Python and Pygame.",
     githubLink: "https://github.com/codernotme/chess-app",
-    content: "For the project codes, you can click the link below.",
+    content: "For the project codes, you can",
     image: "/img/chessapp.png",
     tags: ["Chess", "Python", "Pygame"],
     priority: true,
@@ -138,7 +138,7 @@ export default function Work({ className = "" }: WorkProps) {
   return (
     <article className={`portfolio ${className}`} data-page="portfolio">
       <header>
-        <h2 className="h2 article-title">Portfolio</h2>
+        <h2 className="h2 article-title">Works</h2>
       </header>
 
       <section className="projects">
@@ -175,8 +175,8 @@ export default function Work({ className = "" }: WorkProps) {
                   </div>
                   <Image src={project.image} alt={project.title} loading="lazy" />
                 </figure>
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-category">{project.description}</p>
+                <h3 className="service-item-title h4">{project.title}</h3>
+                <p className="service-item-text">{project.description}</p>
                 <div className={`status ion-icon ${statusConfig[project.status].className}`}>
                   {React.createElement(statusConfig[project.status].icon)}
                   {statusConfig[project.status].text}
@@ -196,32 +196,35 @@ export default function Work({ className = "" }: WorkProps) {
 
             <CardHeader className="modal-header1 flex justify-center items-center space-x-2">
               <div className="modal-icon1">{React.createElement(statusConfig[selectedProject.status].icon)}</div>
-              <h2 className="text-xl font-bold">{selectedProject.title}</h2>
+              <h2 className="service-item-title">{selectedProject.title}</h2>
             </CardHeader>
 
             <CardBody>
               <div className="mt-4">
-                <Image src={selectedProject.image} alt={selectedProject.title} width={500} height={300} className="rounded-lg shadow-md" />
+                <Image src={selectedProject.image} alt={selectedProject.title} width={500} height={300} className="proj-img" />
               </div>
 
-              <div className="blog-text">
+              <div className='service-item-text proj'>
                 <p className="text-gray-300">{selectedProject.content}</p>
+              </div>
+              <div className="service-item-text tech">
+                <span>Tech Stacks</span>
               </div>
 
               <div className="mt-4 flex flex-wrap gap-2 badge-1 justify-center">
                 {selectedProject.tags.map((tag, index) => (
-                  <Badge key={index} className="badge">
+                  <Badge key={index} className="service-item-text badge">
                     {tag}
                   </Badge>
                 ))}
               </div>
             </CardBody>
 
-            <CardFooter className="mt-4 flex justify-center space-x-4 card-foot">
+            <CardFooter className="card-foot">
               {selectedProject.websiteLink && (
                 <button
                   onClick={() => window.open(selectedProject.websiteLink, "_blank")}
-                  className="project-btn"
+                  className='btn-web'
                 >
                   Visit Website
                 </button>
@@ -229,7 +232,7 @@ export default function Work({ className = "" }: WorkProps) {
               {selectedProject.githubLink && (
                 <button
                   onClick={() => window.open(selectedProject.githubLink, "_blank")}
-                  className="project-btn"
+                  className='btn-git'
                 >
                   View on GitHub
                 </button>
