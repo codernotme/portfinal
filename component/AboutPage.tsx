@@ -159,7 +159,7 @@ export default function About({ className = "" }: AboutProps) {
                             <li className="testimonials-item">
                                 <div className="content-card" data-testimonials-item>
                                     <figure className="testimonials-avatar-box">
-                                        <Image src="https://i.postimg.cc/zXv1Xv81/avatar-4.png" alt="avatar" data-testimonials-avatar width="60" />
+                                        <Image src="https://i.postimg.cc/JzBWVhW4/my-avatar.png" alt="avatar" data-testimonials-avatar width="60" />
                                     </figure>
 
                                     <h4 className="h4 testimonials-item-title" data-testimonials-title>Ayush Verma</h4>
