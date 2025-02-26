@@ -2,6 +2,7 @@
 import { Trophy, Award, Medal, X } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
+import { Badge } from "./badge";
 
 interface ContestProps {
   className?: string;
@@ -47,15 +48,11 @@ const achievements: Achievement[] = [
 
 export default function Contest({ className = "" }: ContestProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
-  const [selectedAchievement, setSelectedAchievement] =
-    useState<Achievement | null>(null);
+  const [selectedAchievement, setSelectedAchievement] = useState<Achievement | null>(null);
 
-  const filteredAchievements =
-    selectedCategory === "all"
-      ? achievements
-      : achievements.filter(
-          (achievement) => achievement.category === selectedCategory
-        );
+  const filteredAchievements = selectedCategory === "all"
+    ? achievements
+    : achievements.filter(achievement => achievement.category === selectedCategory);
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
@@ -81,11 +78,7 @@ export default function Contest({ className = "" }: ContestProps) {
         {["all", "contest", "hackathon", "certification"].map((category) => (
           <button
             key={category}
-            className={`achievement-category ${
-              selectedCategory === category
-                ? "bg-purple-500 text-white"
-                : "bg-gray-200 hover:bg-gray-300"
-            }`}
+            className={`achievement-category ${selectedCategory === category ? "bg-purple-500 text-white" : "bg-gray-200 hover:bg-gray-300"}`}
             onClick={() => setSelectedCategory(category)}
           >
             {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -121,58 +114,44 @@ export default function Contest({ className = "" }: ContestProps) {
 
       {/* Achievement Modal */}
       {selectedAchievement && (
-        <div
-          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50"
-          onClick={() => setSelectedAchievement(null)}
-        >
-          <div
-            className="bg-white text-black rounded-lg shadow-lg p-6 w-[90%] sm:w-[600px] relative"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              className="absolute top-3 right-3 text-gray-700 hover:text-black"
-              onClick={() => setSelectedAchievement(null)}
-            >
+        <div className="modal-overlay" onClick={() => setSelectedAchievement(null)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close-btn" onClick={() => setSelectedAchievement(null)}>
               <X className="h-6 w-6" />
             </button>
 
-            <div className="modal-content text-center">
-              <div className="modal-header flex justify-center items-center space-x-2">
-                <div className="modal-icon">{getCategoryIcon(selectedAchievement.category)}</div>
-                <h2 className="text-xl font-bold">{selectedAchievement.title}</h2>
-              </div>
+            <div className="modal-header flex justify-center items-center space-x-2">
+              <div className="modal-icon">{getCategoryIcon(selectedAchievement.category)}</div>
+              <h2 className="text-xl font-bold">{selectedAchievement.title}</h2>
+            </div>
 
-              <div className="mt-4">
-                <p className="text-gray-700">{selectedAchievement.description}</p>
-              </div>
+            <div className="mt-4">
+              <p className="text-gray-300">{selectedAchievement.description}</p>
+            </div>
 
-              {/* Skills Section */}
-              {selectedAchievement.skills && (
-                <div className="skills-section mt-4">
-                  <h3 className="text-lg font-semibold">Skills Demonstrated</h3>
-                  <div className="flex flex-wrap gap-2 mt-2">
-                    {selectedAchievement.skills.map((skill, index) => (
-                      <span
-                        key={index}
-                        className="px-3 py-1 bg-purple-500 text-white rounded-full text-sm"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
+            {/* Skills Section */}
+            {selectedAchievement.skills && (
+              <div className="skills-section mt-4">
+                <h3 className="text-lg font-semibold">Skills Demonstrated</h3>
+                <div className="flex flex-wrap gap-2 mt-2">
+                  {selectedAchievement.skills.map((skill, index) => (
+                    <Badge key={index} variant="default" className="badge">
+                      {skill}
+                    </Badge>
+                  ))}
                 </div>
-              )}
-
-              {/* Image Display */}
-              <div className="mt-4">
-                <Image
-                  src={selectedAchievement.image}
-                  alt={selectedAchievement.title}
-                  width={500}
-                  height={300}
-                  className="rounded-lg shadow-md"
-                />
               </div>
+            )}
+
+            {/* Image Display */}
+            <div className="mt-4">
+              <Image
+                src={selectedAchievement.image}
+                alt={selectedAchievement.title}
+                width={500}
+                height={300}
+                className="rounded-lg shadow-md"
+              />
             </div>
           </div>
         </div>

@@ -1,7 +1,8 @@
 'use client';
 import { Image } from '@heroui/react';
-import { Zap, Star, Clock, Construction, ChevronDown, EyeIcon } from 'lucide-react';
-import React from 'react';
+import { Zap, Star, Clock, Construction, ChevronDown, EyeIcon, X } from 'lucide-react';
+import React, { useState } from 'react';
+import { Badge } from './badge';
 
 type ProjectStatus = 'beta' | 'completed' | 'in-progress' | 'always-updating';
 
@@ -129,6 +130,8 @@ interface WorkProps {
 }
 
 export default function Work({ className = "" }: WorkProps) {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
   return (
     <article className={`portfolio ${className}`} data-page="portfolio">
       <header>
@@ -147,7 +150,7 @@ export default function Work({ className = "" }: WorkProps) {
           <button className="filter-select" data-select>
             <div className="select-value" data-select-value>Select Category</div>
             <div className="select-icon">
-              <ChevronDown/>
+              <ChevronDown />
             </div>
           </button>
 
@@ -162,10 +165,10 @@ export default function Work({ className = "" }: WorkProps) {
         <ul className="project-list">
           {projects.map(project => (
             <li key={project.id} className="project-item active" data-filter-item data-category={project.category}>
-              <a href={project.websiteLink || project.githubLink || '#'}>
+              <div onClick={() => setSelectedProject(project)}>
                 <figure className="project-img">
                   <div className="project-item-icon-box">
-                    <EyeIcon/>
+                    <EyeIcon />
                   </div>
                   <Image src={project.image} alt={project.title} loading="lazy" />
                 </figure>
@@ -175,11 +178,55 @@ export default function Work({ className = "" }: WorkProps) {
                   {React.createElement(statusConfig[project.status].icon)}
                   {statusConfig[project.status].text}
                 </div>
-              </a>
+              </div>
             </li>
           ))}
         </ul>
       </section>
+
+      {selectedProject && (
+        <div className="modal-overlay" onClick={() => setSelectedProject(null)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close-btn" onClick={() => setSelectedProject(null)}>
+              <X className="h-6 w-6" />
+            </button>
+
+            <div className="modal-header flex justify-center items-center space-x-2">
+              <div className="modal-icon">{React.createElement(statusConfig[selectedProject.status].icon)}</div>
+              <h2 className="text-xl font-bold">{selectedProject.title}</h2>
+            </div>
+
+            <div className="mt-4">
+              <p className="text-gray-300">{selectedProject.content}</p>
+            </div>
+
+            <div className="mt-4">
+              <Image src={selectedProject.image} alt={selectedProject.title} width={500} height={300} className="rounded-lg shadow-md" />
+            </div>
+
+            <div className="mt-4 flex justify-center space-x-4">
+              {selectedProject.websiteLink && (
+                <a href={selectedProject.websiteLink} className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">
+                  Visit Website
+                </a>
+              )}
+              {selectedProject.githubLink && (
+                <a href={selectedProject.githubLink} className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">
+                  View on GitHub
+                </a>
+              )}
+            </div>
+
+            <div className="mt-4 flex flex-wrap gap-2 justify-center">
+              {selectedProject.tags.map((tag, index) => (
+                <Badge key={index} variant="default" className="badge">
+                  {tag}
+                </Badge>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </article>
   );
 }
