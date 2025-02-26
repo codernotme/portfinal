@@ -1,5 +1,5 @@
 'use client';
-import { Image } from '@heroui/react';
+import { Image, Card, CardHeader, CardBody, CardFooter } from '@heroui/react';
 import { Zap, Star, Clock, Construction, ChevronDown, EyeIcon, X } from 'lucide-react';
 import React, { useState } from 'react';
 import { Badge } from './badge';
@@ -131,6 +131,9 @@ interface WorkProps {
 
 export default function Work({ className = "" }: WorkProps) {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [filter, setFilter] = useState<string>("All");
+
+  const filteredProjects = filter === "All" ? projects : projects.filter(project => project.category === filter);
 
   return (
     <article className={`portfolio ${className}`} data-page="portfolio">
@@ -140,30 +143,30 @@ export default function Work({ className = "" }: WorkProps) {
 
       <section className="projects">
         <ul className="filter-list">
-          <li className="filter-item"><button className="active" data-filter-btn>All</button></li>
-          <li className="filter-item"><button data-filter-btn>Web Design</button></li>
-          <li className="filter-item"><button data-filter-btn>Applications</button></li>
-          <li className="filter-item"><button data-filter-btn>Web Development</button></li>
+          <li className="filter-item"><button className={filter === "All" ? "active" : ""} onClick={() => setFilter("All")}>All</button></li>
+          <li className="filter-item"><button className={filter === "Web Design" ? "active" : ""} onClick={() => setFilter("Web Design")}>Web Design</button></li>
+          <li className="filter-item"><button className={filter === "Applications" ? "active" : ""} onClick={() => setFilter("Applications")}>Applications</button></li>
+          <li className="filter-item"><button className={filter === "Web Development" ? "active" : ""} onClick={() => setFilter("Web Development")}>Web Development</button></li>
         </ul>
 
         <div className="filter-select-box">
           <button className="filter-select" data-select>
-            <div className="select-value" data-select-value>Select Category</div>
+            <div className="select-value" data-select-value>{filter}</div>
             <div className="select-icon">
               <ChevronDown />
             </div>
           </button>
 
           <ul className="select-list">
-            <li className="select-item"><button data-select-item>All</button></li>
-            <li className="select-item"><button data-select-item>Web Design</button></li>
-            <li className="select-item"><button data-select-item>Applications</button></li>
-            <li className="select-item"><button data-select-item>Web Development</button></li>
+            <li className="select-item"><button onClick={() => setFilter("All")}>All</button></li>
+            <li className="select-item"><button onClick={() => setFilter("Web Design")}>Web Design</button></li>
+            <li className="select-item"><button onClick={() => setFilter("Applications")}>Applications</button></li>
+            <li className="select-item"><button onClick={() => setFilter("Web Development")}>Web Development</button></li>
           </ul>
         </div>
 
         <ul className="project-list">
-          {projects.map(project => (
+          {filteredProjects.map(project => (
             <li key={project.id} className="project-item active" data-filter-item data-category={project.category}>
               <div onClick={() => setSelectedProject(project)}>
                 <figure className="project-img">
@@ -174,7 +177,7 @@ export default function Work({ className = "" }: WorkProps) {
                 </figure>
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-category">{project.description}</p>
-                <div className={`status ${statusConfig[project.status].className}`}>
+                <div className={`status ion-icon ${statusConfig[project.status].className}`}>
                   {React.createElement(statusConfig[project.status].icon)}
                   {statusConfig[project.status].text}
                 </div>
@@ -186,45 +189,53 @@ export default function Work({ className = "" }: WorkProps) {
 
       {selectedProject && (
         <div className="modal-overlay" onClick={() => setSelectedProject(null)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close-btn" onClick={() => setSelectedProject(null)}>
+          <Card className="modal-content1" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close-btn1" onClick={() => setSelectedProject(null)}>
               <X className="h-6 w-6" />
             </button>
 
-            <div className="modal-header flex justify-center items-center space-x-2">
-              <div className="modal-icon">{React.createElement(statusConfig[selectedProject.status].icon)}</div>
+            <CardHeader className="modal-header1 flex justify-center items-center space-x-2">
+              <div className="modal-icon1">{React.createElement(statusConfig[selectedProject.status].icon)}</div>
               <h2 className="text-xl font-bold">{selectedProject.title}</h2>
-            </div>
+            </CardHeader>
 
-            <div className="mt-4">
-              <p className="text-gray-300">{selectedProject.content}</p>
-            </div>
+            <CardBody>
+              <div className="mt-4">
+                <Image src={selectedProject.image} alt={selectedProject.title} width={500} height={300} className="rounded-lg shadow-md" />
+              </div>
 
-            <div className="mt-4">
-              <Image src={selectedProject.image} alt={selectedProject.title} width={500} height={300} className="rounded-lg shadow-md" />
-            </div>
+              <div className="blog-text">
+                <p className="text-gray-300">{selectedProject.content}</p>
+              </div>
 
-            <div className="mt-4 flex justify-center space-x-4">
+              <div className="mt-4 flex flex-wrap gap-2 badge-1 justify-center">
+                {selectedProject.tags.map((tag, index) => (
+                  <Badge key={index} className="badge">
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+            </CardBody>
+
+            <CardFooter className="mt-4 flex justify-center space-x-4 card-foot">
               {selectedProject.websiteLink && (
-                <a href={selectedProject.websiteLink} className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">
+                <button
+                  onClick={() => window.open(selectedProject.websiteLink, "_blank")}
+                  className="project-btn"
+                >
                   Visit Website
-                </a>
+                </button>
               )}
               {selectedProject.githubLink && (
-                <a href={selectedProject.githubLink} className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">
+                <button
+                  onClick={() => window.open(selectedProject.githubLink, "_blank")}
+                  className="project-btn"
+                >
                   View on GitHub
-                </a>
+                </button>
               )}
-            </div>
-
-            <div className="mt-4 flex flex-wrap gap-2 justify-center">
-              {selectedProject.tags.map((tag, index) => (
-                <Badge key={index} variant="default" className="badge">
-                  {tag}
-                </Badge>
-              ))}
-            </div>
-          </div>
+            </CardFooter>
+          </Card>
         </div>
       )}
     </article>

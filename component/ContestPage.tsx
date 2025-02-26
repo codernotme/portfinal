@@ -3,6 +3,7 @@ import { Trophy, Award, Medal, X } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
 import { Badge } from "./badge";
+import { Card, CardHeader, CardBody, CardFooter } from "@heroui/react";
 
 interface ContestProps {
   className?: string;
@@ -15,7 +16,7 @@ interface Achievement {
   date: string;
   description: string;
   image: string;
-  category: "contest" | "hackathon" | "certification";
+  category: "hackathon" | "certification";
   position?: string;
   skills?: string[];
 }
@@ -56,8 +57,6 @@ export default function Contest({ className = "" }: ContestProps) {
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
-      case "contest":
-        return <Trophy className="achievement-icon" />;
       case "hackathon":
         return <Award className="achievement-icon" />;
       case "certification":
@@ -75,7 +74,7 @@ export default function Contest({ className = "" }: ContestProps) {
 
       {/* Category Filters */}
       <div className="flex justify-center filter-list space-x-3 my-4">
-        {["all", "contest", "hackathon", "certification"].map((category) => (
+        {["all", "hackathon", "certification"].map((category) => (
           <button
             key={category}
             className={`achievement-category ${selectedCategory === category ? "bg-purple-500 text-white" : "bg-gray-200 hover:bg-gray-300"}`}
@@ -115,45 +114,47 @@ export default function Contest({ className = "" }: ContestProps) {
       {/* Achievement Modal */}
       {selectedAchievement && (
         <div className="modal-overlay" onClick={() => setSelectedAchievement(null)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close-btn" onClick={() => setSelectedAchievement(null)}>
+          <Card className="modal-content1" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close-btn1" onClick={() => setSelectedAchievement(null)}>
               <X className="h-6 w-6" />
             </button>
 
-            <div className="modal-header flex justify-center items-center space-x-2">
-              <div className="modal-icon">{getCategoryIcon(selectedAchievement.category)}</div>
+            <CardHeader className="modal-header1 flex justify-center items-center space-x-2">
+              <div className="modal-icon1">{getCategoryIcon(selectedAchievement.category)}</div>
               <h2 className="text-xl font-bold">{selectedAchievement.title}</h2>
-            </div>
+            </CardHeader>
 
-            <div className="mt-4">
-              <p className="text-gray-300">{selectedAchievement.description}</p>
-            </div>
-
-            {/* Skills Section */}
-            {selectedAchievement.skills && (
-              <div className="skills-section mt-4">
-                <h3 className="text-lg font-semibold">Skills Demonstrated</h3>
-                <div className="flex flex-wrap gap-2 mt-2">
-                  {selectedAchievement.skills.map((skill, index) => (
-                    <Badge key={index} variant="default" className="badge">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
+            <CardBody>
+              {/* Image Display */}
+              <div className="mt-4">
+                <Image
+                  src={selectedAchievement.image}
+                  alt={selectedAchievement.title}
+                  width={500}
+                  height={300}
+                  className="rounded-lg shadow-md"
+                />
               </div>
-            )}
+              <div className="mt-4">
+                <p className="text-gray-300">{selectedAchievement.description}</p>
+              </div>
 
-            {/* Image Display */}
-            <div className="mt-4">
-              <Image
-                src={selectedAchievement.image}
-                alt={selectedAchievement.title}
-                width={500}
-                height={300}
-                className="rounded-lg shadow-md"
-              />
-            </div>
-          </div>
+              {/* Skills Section */}
+              {selectedAchievement.skills && (
+                <div className="skills-section mt-4">
+                  <h3 className="text-lg font-semibold">Skills Demonstrated</h3>
+                  <div className="flex flex-wrap gap-2 mt-2 badge-1">
+                    {selectedAchievement.skills.map((skill, index) => (
+                      <Badge key={index} variant="default" className="badge">
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+            </CardBody>
+          </Card>
         </div>
       )}
     </article>

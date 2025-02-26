@@ -33,14 +33,13 @@ export default function Main() {
                     <div className="info-content">
                         <h1 className="name" title="Aryan Bajpai">Aryan Bajpai</h1>
                         <div className="tile">
-                            <p className="title">Web Developer</p>
-                            <p className="title">Founder</p>
+                            <p className="title">Founder and Technologist</p>
                         </div>
                     </div>
 
                     <button className="info-more-btn" data-sidebar-btn>
                         <span>Show Contacts</span>
-                        <ChevronDownIcon size={24} />
+                        <ChevronDownIcon className="ion-icon" />
                     </button>
                 </div>
 
@@ -50,7 +49,7 @@ export default function Main() {
                     <ul className="contacts-list">
                         <li className="contact-item">
                             <div className="icon-box">
-                                <MailIcon size={24} />
+                                <MailIcon className="ion-icon" />
                             </div>
 
                             <div className="contact-info">
@@ -62,7 +61,7 @@ export default function Main() {
 
                         <li className="contact-item">
                             <div className="icon-box">
-                                <PhoneIcon size={24} />
+                                <PhoneIcon className="ion-icon" />
                             </div>
 
                             <div className="contact-info">
@@ -74,7 +73,7 @@ export default function Main() {
 
                         <li className="contact-item">
                             <div className="icon-box">
-                                <Calendar size={24} />
+                                <Calendar className="ion-icon" />
                             </div>
 
                             <div className="contact-info">
@@ -86,7 +85,7 @@ export default function Main() {
 
                         <li className="contact-item">
                             <div className="icon-box">
-                                <LocateIcon size={24} />
+                                <LocateIcon className="ion-icon" />
                             </div>
 
                             <div className="contact-info">
@@ -99,10 +98,10 @@ export default function Main() {
                     <div className="separator"></div>
 
                     <ul className="social-list">
-                        <li className="social-item"><a href="#" className="social-link"><LinkedinIcon size={24} /></a></li>
-                        <li className="social-item"><a href="#" className="social-link"><GithubIcon size={24} /></a></li>
-                        <li className="social-item"><a href="#" className="social-link"><TwitterIcon size={24} /></a></li>
-                        <li className="social-item"><a href="#" className="social-link"><InstagramIcon size={24} /></a></li>
+                        <li className="social-item"><a href="#" className="social-link"><LinkedinIcon className="ion-icon" /></a></li>
+                        <li className="social-item"><a href="#" className="social-link"><GithubIcon className="ion-icon" /></a></li>
+                        <li className="social-item"><a href="#" className="social-link"><TwitterIcon className="ion-icon" /></a></li>
+                        <li className="social-item"><a href="#" className="social-link"><InstagramIcon className="ion-icon" /></a></li>
                     </ul>
                 </div>
             </aside>
