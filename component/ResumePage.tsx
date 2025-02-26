@@ -1,7 +1,6 @@
 "use client";
 import { BookIcon } from "lucide-react";
 import { useEffect, useState } from "react";
-import "../styles/ResumePage.css";
 interface ResumeProps {
   className?: string;
 }
