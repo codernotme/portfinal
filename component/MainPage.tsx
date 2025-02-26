@@ -27,7 +27,7 @@ export default function Main() {
             <aside className="sidebar " data-sidebar>
                 <div className="sidebar-info">
                     <figure className="avatar-box">
-                        <Image src="https://i.postimg.cc/JzBWVhW4/my-avatar.png" alt="avatar" width="80" height="80" />
+                        <Image src="/ary.png" alt="avatar" width="80" height="80" />
                     </figure>
 
                     <div className="info-content">

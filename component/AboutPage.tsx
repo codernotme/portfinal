@@ -65,7 +65,7 @@ export default function About({ className = "" }: AboutProps) {
                         <ul className="service-list">
                             <li className="service-item">
                                 <div className="service-icon-box">
-                                    <Image src="https://i.postimg.cc/4389jZkP/icon-design.png" alt="icon" width="40" />
+                                    <Image src="/images/innovate.png" alt="icon" width="100" />
                                 </div>
                                 <div className="service-content-box">
                                     <h4 className="h4 service-item-title">Innovator</h4>
@@ -76,7 +76,7 @@ export default function About({ className = "" }: AboutProps) {
                             </li>
                             <li className="service-item">
                                 <div className="service-icon-box">
-                                    <Image src="https://i.postimg.cc/ZqgqrqzG/icon-dev.png" alt="icon" width="40" />
+                                    <Image src="/images/webbuild.png" alt="icon" width="100" />
                                 </div>
                                 <div className="service-content-box">
                                     <h4 className="h4 service-item-title">Full-Stack Development</h4>
@@ -87,7 +87,7 @@ export default function About({ className = "" }: AboutProps) {
                             </li>
                             <li className="service-item">
                                 <div className="service-icon-box">
-                                    <Image src="https://i.postimg.cc/xjLdzYxZ/icon-app.png" alt="icon" width="40" />
+                                    <Image src="/images/ai.png" alt="icon" width="100" />
                                 </div>
                                 <div className="service-content-box">
                                     <h4 className="h4 service-item-title">AI & Automation</h4>
@@ -98,7 +98,7 @@ export default function About({ className = "" }: AboutProps) {
                             </li>
                             <li className="service-item">
                                 <div className="service-icon-box">
-                                    <Image src="https://i.postimg.cc/0NL8zHpx/icon-photo.png" alt="icon" width="40" />
+                                    <Image src="/images/ui.png" alt="icon" width="100" />
                                 </div>
                                 <div className="service-content-box">
                                     <h4 className="h4 service-item-title">UI/UX & Branding</h4>
