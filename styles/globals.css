@@ -1177,6 +1177,18 @@ article.active {
   margin-bottom: 10px;
 }
 
+.blogs{
+  position: relative;
+  background: var(--border-gradient-onyx);
+  padding: 15px;
+  padding-top: 45px;
+  border-radius: 14px;
+  box-shadow: var(--shadow2);
+  cursor: pointer;
+  z-index: 1;
+  border: 1px solid var(--jet);
+}
+
 .blog-posts-list {
   display: grid;
   grid-template-columns: 1fr;
@@ -2382,4 +2394,13 @@ textarea.form-input::-webkit-realizer {
   border-radius: 10px 10px 10px 10px;
   color: var(--light-gray);
   margin: 10px 0px;
+}
+
+.dropdwn{
+  padding: 5px 10px;
+  background-color: var(--eerie-black1);
+  border-radius: 10px 10px 10px 10px;
+  color: var(--light-gray);
+  margin: 10px 0px;
+  width: 250px;
 }

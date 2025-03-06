@@ -1,5 +1,5 @@
 'use client';
-import { Image, Card, CardHeader, CardBody, CardFooter} from '@heroui/react';
+import { Image, Card, CardHeader, CardBody, CardFooter, Dropdown, DropdownTrigger, DropdownMenu, DropdownSection, DropdownItem } from '@heroui/react';
 import { Zap, Star, Clock, Construction, ChevronDown, EyeIcon, X } from 'lucide-react';
 import React, { useState } from 'react';
 import { Badge } from './badge';
@@ -135,6 +135,10 @@ export default function Work({ className = "" }: WorkProps) {
 
   const filteredProjects = filter === "All" ? projects : projects.filter(project => project.category === filter);
 
+  const handleFilterChange = (newFilter: string) => {
+    setFilter(newFilter);
+  };
+
   return (
     <article className={`portfolio ${className}`} data-page="portfolio">
       <header>
@@ -150,19 +154,24 @@ export default function Work({ className = "" }: WorkProps) {
         </ul>
 
         <div className="filter-select-box">
-          <button className="filter-select" data-select>
-            <div className="select-value" data-select-value>{filter}</div>
-            <div className="select-icon">
-              <ChevronDown />
-            </div>
-          </button>
-
-          <ul className="select-list">
-            <li className="select-item"><button onClick={() => setFilter("All")}>All</button></li>
-            <li className="select-item"><button onClick={() => setFilter("Web Design")}>Web Design</button></li>
-            <li className="select-item"><button onClick={() => setFilter("Applications")}>Applications</button></li>
-            <li className="select-item"><button onClick={() => setFilter("Web Development")}>Web Development</button></li>
-          </ul>
+          <Dropdown>
+            <DropdownTrigger>
+              <button className="filter-select">
+                <div className="select-value">{filter}</div>
+                <div className="select-icon">
+                  <ChevronDown />
+                </div>
+              </button>
+            </DropdownTrigger>
+            <DropdownMenu className='dropdwn'>
+              <DropdownSection>
+                <DropdownItem onClick={() => handleFilterChange("All")} key={''}>All</DropdownItem>
+                <DropdownItem onClick={() => handleFilterChange("Web Design")} key={''}>Web Design</DropdownItem>
+                <DropdownItem onClick={() => handleFilterChange("Applications")} key={''}>Applications</DropdownItem>
+                <DropdownItem onClick={() => handleFilterChange("Web Development")} key={''}>Web Development</DropdownItem>
+              </DropdownSection>
+            </DropdownMenu>
+          </Dropdown>
         </div>
 
         <ul className="project-list">

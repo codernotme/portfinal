@@ -14,7 +14,7 @@ export default function Blog({ className = "" }: BlogProps) {
 
             <section className="blog-posts">
                 <ul className="blog-posts-list">
-                    <li className="blog-post-item">
+                    <li className="blog-post-item blogs">
                         <a href="https://codernotme.hashnode.dev/understanding-load-balancing-in-modern-cloudtech-companies">
                             <figure className="blog-banner-box">
                                 <Image src="blog/balance.png" alt="Understanding Load Balancing in Modern CloudTech Companies" loading="lazy" />
@@ -33,7 +33,7 @@ export default function Blog({ className = "" }: BlogProps) {
                         </a>
                     </li>
 
-                    <li className="blog-post-item">
+                    <li className="blog-post-item blogs">
                         <a href="https://codernotme.hashnode.dev/decoding-dsa">
                             <figure className="blog-banner-box">
                                 <Image src="blog/dsa.png" alt="Decoding DSA: Navigating Coding Challenges and Interviews" loading="lazy" />
@@ -52,7 +52,7 @@ export default function Blog({ className = "" }: BlogProps) {
                         </a>
                     </li>
 
-                    <li className="blog-post-item">
+                    <li className="blog-post-item blogs">
                         <a href="https://codernotme.hashnode.dev/blockchain-technology-unpacking-its-potential-and-limitations-in-slow-motion">
                             <figure className="blog-banner-box">
                                 <Image src="blog/blockchain.png" alt="Blockchain Technology: Unpacking Its Potential and Limitations in Slow Motion" loading="lazy" />
@@ -71,7 +71,7 @@ export default function Blog({ className = "" }: BlogProps) {
                         </a>
                     </li>
 
-                    <li className="blog-post-item">
+                    <li className="blog-post-item blogs">
                         <a href="https://codernotme.hashnode.dev/the-serverless-revolution">
                             <figure className="blog-banner-box">
                                 <Image src="blog/serverless.png" alt="The Serverless Revolution: A New Era of Agile and Cost-Effective Hosting" loading="lazy" />
