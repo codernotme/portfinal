@@ -177,10 +177,10 @@ export default function Work({ className = "" }: WorkProps) {
                 </figure>
                 <h3 className="service-item-title h4">{project.title}</h3>
                 <p className="service-item-text">{project.description}</p>
-                <div className={`status ion-icon ${statusConfig[project.status].className}`}>
-                  {React.createElement(statusConfig[project.status].icon)}
-                  {statusConfig[project.status].text}
+                <div className="card_box">
+                    <span data-status={statusConfig[project.status].text}></span>
                 </div>
+                <button className="btn">View Project</button>
               </div>
             </li>
           ))}
