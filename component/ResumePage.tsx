@@ -145,11 +145,11 @@ export default function Resume({ className = "" }: ResumeProps) {
         <div className="fixed-button">
           <button className="button" onClick={() => window.open('/resume_aryanbajpai.pdf', '_blank')}>
             <svg
-              stroke-linejoin="round"
-              stroke-linecap="round"
+              strokeLinejoin="round"
+              strokeLinecap="round"
               fill="none"
               stroke="currentColor"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               viewBox="0 0 24 24"
               height="40"
               width="40"
