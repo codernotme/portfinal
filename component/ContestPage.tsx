@@ -24,11 +24,11 @@ interface Achievement {
 const achievements: Achievement[] = [
   {
     id: 1,
-    title: "Top 10 Finalist - HackIITK 2k25",
+    title: "Top 10 Finalist - HackIITK 2k24",
     organization: "IIT Kanpur (C3I Hub)",
     date: "November 2024 - February 2025",
     description:
-      "Recognized as a Top 10 Finalist at HackIITK 2k25 for developing an innovative solution using AI and blockchain.",
+      "Recognized as a Top 10 Finalist at HackIITK 2k24, for developing an innovative solution using AI and blockchain.",
     image: "/certificates/hackiitk.jpg",
     category: "hackathon",
     position: "Top 10 Finalist",
