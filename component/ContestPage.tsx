@@ -3,7 +3,7 @@ import { Trophy, Award, Medal, X } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
 import { Badge } from "./badge";
-import { Card, CardHeader, CardBody, CardFooter } from "@heroui/react";
+import { Card, CardHeader, CardBody } from "@heroui/react";
 
 interface ContestProps {
   className?: string;

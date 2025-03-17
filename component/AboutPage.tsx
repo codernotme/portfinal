@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { Image } from "@heroui/react";
 import { ChevronRight, XIcon } from "lucide-react";
+import Link from "next/link";
 
 interface AboutProps {
     className?: string;
@@ -231,13 +232,13 @@ export default function About({ className = "" }: AboutProps) {
                         <h3 className="h3 tackle-title">Want to know about Tackle Studioz?</h3>
                         <section className="about-text">
                             <p>Tackle Studioz is a cutting-edge digital solutions company dedicated to crafting innovative and accessible technology. From SaaS and PaaS products to AI-driven solutions and custom web development, we bring ideas to life with creativity and precision. Our mission is to make high-quality digital experiences available to everyone, helping businesses and individuals turn their visions into reality.</p>
-                            <p>Founded by me. Tackle Studioz is driven by a vision to revolutionize the digital landscape. We believe in innovation, accessibility, and impact, striving to build solutions that empower users and redefine possibilities. Whether it's developing our own tech products or helping businesses scale, we are committed to pushing the boundaries of what's possible.</p>
+                            <p>Founded by me. Tackle Studioz is driven by a vision to revolutionize the digital landscape. We believe in innovation, accessibility, and impact, striving to build solutions that empower users and redefine possibilities. Whether it&apos;s developing our own tech products or helping businesses scale, we are committed to pushing the boundaries of what&apops;s possible.</p>
                         </section>
                         </div>
-                            <a href="https://tacklestudioz.com" className="tackle-btn" target="_blank">
+                            <Link href="https://tacklestudioz.com" className="tackle-btn" target="_blank">
                                Know More
                                 <ChevronRight size={24} className="ion-icon" />
-                            </a>
+                            </Link>
                     </section>
                 </article>
             </div>

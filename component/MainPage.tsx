@@ -1,6 +1,7 @@
 "use client";
 import { Image } from "@heroui/react";
 import { Calendar, ChevronDownIcon, GithubIcon, LinkedinIcon, LocateIcon, MailIcon, PhoneIcon, TwitterIcon, } from "lucide-react";
+import Link from "next/link";
 import { useEffect } from "react";
 
 export default function Main() {
@@ -98,9 +99,9 @@ export default function Main() {
                     <div className="separator"></div>
 
                     <ul className="social-list">
-                        <li className="social-item"><a href="https://www.linkedin.com/in/codernotme" className="social-link"><LinkedinIcon className="ion-icon" /></a></li>
-                        <li className="social-item"><a href="https://github.com/codernotme" className="social-link"><GithubIcon className="ion-icon" /></a></li>
-                        <li className="social-item"><a href="https://x.com/codernotme" className="social-link"><TwitterIcon className="ion-icon" /></a></li>
+                        <li className="social-item"><Link href="https://www.linkedin.com/in/codernotme" className="social-link"><LinkedinIcon className="ion-icon" /></Link></li>
+                        <li className="social-item"><Link href="https://github.com/codernotme" className="social-link"><GithubIcon className="ion-icon" /></Link></li>
+                        <li className="social-item"><Link href="https://x.com/codernotme" className="social-link"><TwitterIcon className="ion-icon" /></Link></li>
                     </ul>
                 </div>
             </aside>
