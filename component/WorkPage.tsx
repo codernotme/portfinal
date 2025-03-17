@@ -33,7 +33,7 @@ const projects: Project[] = [
     title: "VYBE",
     description:
       "A unique social platform that empowers students, mentors, and communities within colleges to connect meaningfully.",
-    websiteLink: "https://vybe-nu.vercel.app/",
+    websiteLink: "https://vybe.codernotme.me/",
     githubLink: "https://github.com/codernotme/vybe",
     content:
       "Designed to foster collaboration, build communities, and facilitate mentorship, VYBE redefines campus social interactions.",
@@ -48,7 +48,7 @@ const projects: Project[] = [
     title: "ECHO",
     description:
       "An online social media platform designed to bring people together in a space where they can post, chat, and connect with others.",
-    websiteLink: "https://socialmed-echo.vercel.app/",
+    websiteLink: "https://echo.codernotme.me/",
     githubLink: "https://github.com/codernotme/echo",
     content:
       "It's a platform that enables users to chat with others, share ideas, and much more. To check out the alpha version,",
@@ -88,7 +88,7 @@ const projects: Project[] = [
     id: 5,
     title: "Allocam",
     description: "Omegle Substitute made using vite and react.",
-    websiteLink: "https://allocam.vercel.app/",
+    websiteLink: "https://allocam.codernotme.me/",
     githubLink: "https://github.com/codernotme/allocam",
     content:
       "Allocam is a real-time camera and streaming application designed for secure and responsive live video interactions. Built with Vite, Node.js, and Socket.IO, Allocam ensures minimal delay and a user-friendly interface.",
