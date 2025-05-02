@@ -82,18 +82,6 @@ portfinal/
 └── ...configuration files
 ```
 
-## 📷 Screenshots
-
-[Add screenshots of your portfolio here]
-
-## 📬 Contact
-
-Feel free to reach out to me for any questions or opportunities:
-
-- Email: your.email@example.com
-- LinkedIn: [Your LinkedIn Profile](https://linkedin.com/in/yourprofile)
-- GitHub: [Your GitHub Profile](https://github.com/yourusername)
-
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).
