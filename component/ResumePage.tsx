@@ -75,7 +75,7 @@ export default function Resume({ className = "" }: ResumeProps) {
         <ol className="timeline-list">
           <li className="timeline-item">
             <h4 className="h4 timeline-item-title">VYBE - Connect, Collaborate, and Thrive</h4>
-            <span>Nov 2024 - Present</span>
+            <span>Nov 2024 - March 2025</span>
             <p className="timeline-text">Built a social platform empowering students, mentors, and communities to connect meaningfully using Next.js, Convex, Clerk, and TypeScript.</p>
           </li>
           <li className="timeline-item">
