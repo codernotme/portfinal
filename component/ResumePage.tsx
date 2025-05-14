@@ -75,7 +75,7 @@ export default function Resume({ className = "" }: ResumeProps) {
         <ol className="timeline-list">
           <li className="timeline-item">
             <h4 className="h4 timeline-item-title">VYBE - Connect, Collaborate, and Thrive</h4>
-            <span>Nov 2024 - March 2025</span>
+            <span>Nov 2024 - Mar 2025</span>
             <p className="timeline-text">Built a social platform empowering students, mentors, and communities to connect meaningfully using Next.js, Convex, Clerk, and TypeScript.</p>
           </li>
           <li className="timeline-item">
@@ -97,19 +97,19 @@ export default function Resume({ className = "" }: ResumeProps) {
           <li className="skills-item">
             <div className="title-wrapper">
               <h5 className="h5">Web Development</h5>
-              <data value="90">90%</data>
+              <data value="90">95%</data>
             </div>
             <div className="skills-progress-bg">
-              <div className="skills-progress-fill" style={{ width: '90%' }}></div>
+              <div className="skills-progress-fill" style={{ width: '95%' }}></div>
             </div>
           </li>
           <li className="skills-item">
             <div className="title-wrapper">
               <h5 className="h5">Frontend Development</h5>
-              <data value="85">85%</data>
+              <data value="85">90%</data>
             </div>
             <div className="skills-progress-bg">
-              <div className="skills-progress-fill" style={{ width: '85%' }}></div>
+              <div className="skills-progress-fill" style={{ width: '90%' }}></div>
             </div>
           </li>
           <li className="skills-item">
