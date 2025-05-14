@@ -50,7 +50,7 @@ export default function Resume({ className = "" }: ResumeProps) {
             </li>
             <li className="timeline-item">
             <h4 className="h4 timeline-item-title">Senior Dev Lead - Ignitia2k25 College Fest Website</h4>
-            <span>Dec 2024 - Present</span>
+            <span>Dec 2024 - Apr 2025</span>
             <p className="timeline-text">Leading the development of the Ignitia2k25 website for PSIT’s college fest, implementing scalable solutions and ensuring an interactive user experience.</p>
           </li>
           <li className="timeline-item">
