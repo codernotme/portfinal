@@ -68,7 +68,7 @@ export default function Main() {
                             <div className="contact-info">
                                 <p className="contact-title">Phone</p>
 
-                                <a href="tel:+91 9795341919" className="contact-link">+91 9795341919</a>
+                                <a href="tel:+91 9214144637" className="contact-link">+91 9214144637</a>
                             </div>
                         </li>
 
